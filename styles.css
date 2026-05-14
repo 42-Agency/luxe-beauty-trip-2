@@ -1056,4 +1056,5 @@ h1, h2, h3, h4 {
   .why-grid { grid-template-columns: 1fr; }
   .why-korea { padding: 56px 24px; }
   .checkbox-grid { grid-template-columns: 1fr; }
+  .hero-slide .hero-bg { background-image: url('images/LBT-MOBILE-HERO.jpg') !important; }
 }
