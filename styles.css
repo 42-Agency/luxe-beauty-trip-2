@@ -1058,3 +1058,64 @@ h1, h2, h3, h4 {
   .checkbox-grid { grid-template-columns: 1fr; }
   .hero-slide .hero-bg { background-image: url('images/LBT-MOBILE-HERO.jpg') !important; }
 }
+
+/* ===== FOUNDERS TEASER ===== */
+.founders-teaser {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+}
+.founders-teaser-photo {
+  overflow: hidden;
+}
+.founders-teaser-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.founders-teaser-text {
+  background: #fdf9f8;
+  padding: 72px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+.founders-teaser-text .itin-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose);
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+.founders-teaser-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--navy);
+  margin-bottom: 20px;
+  line-height: 1.25;
+  -webkit-font-smoothing: antialiased;
+}
+.founders-teaser-text p {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: #555;
+  margin-bottom: 16px;
+}
+.founders-teaser-text .btn {
+  align-self: flex-start;
+  margin-top: 12px;
+}
+@media (max-width: 860px) {
+  .founders-teaser { grid-template-columns: 1fr; }
+  .founders-teaser-photo { height: 360px; }
+  .founders-teaser-text { padding: 48px 32px; }
+}
+@media (max-width: 600px) {
+  .founders-teaser-photo { height: 280px; }
+  .founders-teaser-text { padding: 40px 20px; }
+}
