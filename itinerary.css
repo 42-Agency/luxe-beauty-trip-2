@@ -297,8 +297,7 @@
   align-items: start;
 }
 .about-photo-wrap {
-  position: sticky;
-  top: calc(var(--header-h) + 24px);
+  position: static;
 }
 .about-photo {
   width: 100%;
