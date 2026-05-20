@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seoul Group Beauty Trip — 8 Spots Only | Luxe Beauty Trip</title>
+  <meta name="description" content="A curated group beauty trip to Seoul — world-class aesthetic treatments, cultural experiences, and a group of like-minded women. 8 spots. $3,000 per person. Join the waitlist.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="itinerary.css">
+  <style>
+    .gt-hero {
+      margin-top: var(--header-h);
+      background: var(--navy);
+      padding: 96px 24px 80px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .gt-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('images/seoul-garden.jpg') center/cover no-repeat;
+      opacity: 0.18;
+    }
+    .gt-hero-inner { position: relative; z-index: 2; max-width: 760px; margin: 0 auto; }
+    .gt-hero .itin-label { display: inline-block; margin-bottom: 20px; }
+    .gt-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      font-style: italic;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .gt-hero p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      opacity: 0.82;
+      margin-bottom: 36px;
+      font-weight: 300;
+    }
+    .gt-spots {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(212,131,122,0.18);
+      border: 1px solid rgba(212,131,122,0.4);
+      border-radius: 40px;
+      padding: 10px 24px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: #ffd4cf;
+      margin-bottom: 36px;
+    }
+    .gt-spots-dot {
+      width: 8px; height: 8px;
+      background: var(--rose);
+      border-radius: 50%;
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.75); }
+    }
+
+    .gt-body { max-width: 900px; margin: 0 auto; padding: 72px 24px; }
+
+    .gt-what {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 72px;
+      align-items: start;
+    }
+    .gt-what-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--navy);
+      margin-bottom: 20px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .gt-what-text p {
+      font-size: 0.97rem;
+      line-height: 1.85;
+      color: #555;
+      margin-bottom: 16px;
+    }
+    .gt-includes {
+      background: #fdf9f8;
+      border-radius: 16px;
+      padding: 32px;
+    }
+    .gt-includes h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--navy);
+      margin-bottom: 20px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .gt-includes ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .gt-includes li {
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.5;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .gt-includes li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--rose);
+      border-radius: 50%;
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    .gt-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 72px;
+    }
+    .gt-stat {
+      text-align: center;
+      padding: 32px 20px;
+      border: 1px solid #eee;
+      border-radius: 14px;
+    }
+    .gt-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 8px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .gt-stat-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #999;
+    }
+
+    .gt-who {
+      background: var(--navy);
+      border-radius: 20px;
+      padding: 48px;
+      margin-bottom: 72px;
+      color: #fff;
+    }
+    .gt-who h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      font-style: italic;
+      margin-bottom: 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .gt-who-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .gt-who-item {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-size: 0.9rem;
+      line-height: 1.55;
+      opacity: 0.88;
+    }
+
+    .gt-form-wrap {
+      background: #fdf9f8;
+      border-radius: 20px;
+      padding: 56px 48px;
+      text-align: center;
+    }
+    .gt-form-wrap .itin-label { display: inline-block; margin-bottom: 16px; }
+    .gt-form-wrap h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      font-style: italic;
+      color: var(--navy);
+      margin-bottom: 12px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .gt-form-wrap .gt-form-sub {
+      font-size: 0.95rem;
+      color: #777;
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+    .gt-form {
+      max-width: 480px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .gt-note {
+      font-size: 0.78rem;
+      color: #aaa;
+      text-align: center;
+      margin-top: 16px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .gt-what { grid-template-columns: 1fr; gap: 32px; }
+      .gt-stats { grid-template-columns: repeat(3, 1fr); }
+      .gt-who-grid { grid-template-columns: 1fr; }
+      .gt-form-wrap { padding: 40px 24px; }
+      .gt-who { padding: 32px 24px; }
+    }
+    @media (max-width: 540px) {
+      .gt-stats { grid-template-columns: 1fr; }
+      .gt-body { padding: 48px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header" id="header">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Luxe Beauty Trip" class="logo-img">
+      </a>
+      <div class="nav-links">
+        <a href="experiences.html">K- Experiences</a>
+        <a href="attractions.html">South Korea Attractions</a>
+        <a href="treatments.html">K- Beauty Treatments</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <a href="#waitlist" class="btn btn-rose nav-cta">Reserve My Spot</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="experiences.html">K- Experiences</a>
+      <a href="attractions.html">South Korea Attractions</a>
+      <a href="treatments.html">K- Beauty Treatments</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="#waitlist" class="btn btn-rose">Reserve My Spot</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="gt-hero">
+    <div class="gt-hero-inner">
+      <p class="itin-label">Group Trip · Seoul, Korea</p>
+      <h1>8 Women. Seoul.<br>A Beauty Trip Unlike Anything You've Done Before.</h1>
+      <p>World-class aesthetic treatments, unforgettable cultural experiences, and a group of like-minded women — all curated personally by Sophia and Diana.</p>
+      <div class="gt-spots">
+        <span class="gt-spots-dot"></span>
+        Only 8 spots available
+      </div>
+      <br>
+      <a href="#waitlist" class="btn btn-rose">Join the Waitlist</a>
+    </div>
+  </section>
+
+  <div class="gt-body">
+
+    <!-- WHAT + INCLUDES -->
+    <div class="gt-what">
+      <div class="gt-what-text">
+        <h2>What This Trip Is</h2>
+        <p>A small-group trip to Seoul built around you — your skin goals, your pace, your experience. Not a bus tour. Not a generic package. A carefully curated week where every clinic visit, every restaurant, and every experience has been personally vetted by two women who have done this themselves.</p>
+        <p>During the day, you'll be at some of Seoul's best aesthetic clinics getting treatments you simply can't access at home — Rejuran, HIFU, skin boosters, laser. In the evenings, you're exploring one of the world's most exciting cities with a group who gets it.</p>
+        <p>Itinerary details are being finalised. Register your interest now to get first access when they drop — and to secure your spot before they're gone.</p>
+      </div>
+      <div class="gt-includes">
+        <h3>What's Included</h3>
+        <ul>
+          <li>Curated clinic visits with pre-vetted Seoul dermatologists</li>
+          <li>Personal skin consultation & treatment planning</li>
+          <li>Cultural experiences — markets, temples, palaces, local dining</li>
+          <li>Shopping in Gangnam, Garosu-gil & Myeongdong</li>
+          <li>K-beauty experiences — colour analysis, hair spa, makeup session</li>
+          <li>All bookings and logistics handled by Sophia & Diana</li>
+          <li>Group of 8 women maximum — intimate, not a tour</li>
+          <li>Full support throughout the trip</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="gt-stats">
+      <div class="gt-stat">
+        <div class="gt-stat-num">8</div>
+        <div class="gt-stat-label">Spots Total</div>
+      </div>
+      <div class="gt-stat">
+        <div class="gt-stat-num">$3k</div>
+        <div class="gt-stat-label">Per Person</div>
+      </div>
+      <div class="gt-stat">
+        <div class="gt-stat-num">Seoul</div>
+        <div class="gt-stat-label">Destination</div>
+      </div>
+    </div>
+
+    <!-- WHO IT'S FOR -->
+    <div class="gt-who">
+      <h2>This Trip Is For You If...</h2>
+      <div class="gt-who-grid">
+        <div class="gt-who-item">You've been curious about Korean aesthetic treatments but don't know where to start or who to trust</div>
+        <div class="gt-who-item">You're tired of paying full price at home for treatments that don't fully deliver</div>
+        <div class="gt-who-item">You want to travel somewhere genuinely exciting — not just a resort</div>
+        <div class="gt-who-item">You'd rather do this with a curated group of women than navigate it solo</div>
+      </div>
+    </div>
+
+    <!-- WAITLIST FORM -->
+    <div class="gt-form-wrap" id="waitlist">
+      <p class="itin-label">Limited to 8 Spots</p>
+      <h2>Reserve Your Spot on the Waitlist</h2>
+      <p class="gt-form-sub">Itinerary details and dates are coming soon. Register now to get first access — and to make sure you're considered before spots fill.</p>
+
+      <form class="gt-form contact-form" action="https://formspree.io/f/meenwqbw" method="POST">
+        <input type="hidden" name="_subject" value="Group Trip Waitlist">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="gtFirstName">First Name <span class="req">*</span></label>
+            <input type="text" id="gtFirstName" name="first_name" required>
+          </div>
+          <div class="form-group">
+            <label for="gtLastName">Last Name <span class="req">*</span></label>
+            <input type="text" id="gtLastName" name="last_name" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="gtEmail">Email <span class="req">*</span></label>
+          <input type="email" id="gtEmail" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="gtCountry">Where are you based?</label>
+          <input type="text" id="gtCountry" name="location" placeholder="City, Country">
+        </div>
+
+        <div class="form-group">
+          <label for="gtWhy">What excites you most about this trip? <span class="form-hint">Optional</span></label>
+          <textarea id="gtWhy" name="message" rows="3" placeholder="The treatments, the culture, doing it with a group..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-rose" style="width:100%">Reserve My Spot on the Waitlist</button>
+      </form>
+
+      <p class="gt-note">Submitting this form holds your interest only — no payment is taken. We'll be in touch with full itinerary details and next steps. Full payment of $3,000 per person will be required to confirm your spot.</p>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 Luxe Beauty Trip. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
