@@ -12,7 +12,7 @@ a { text-decoration: none; }
   --coral:   #C84040;
   --white:   #ffffff;
   --text:    #2C2C2C;
-  --header-h: 72px;
+  --header-h: 88px;
 }
 
 html { scroll-behavior: smooth; }
@@ -78,9 +78,9 @@ h1, h2, h3, h4 {
 .logo { display: flex; align-items: center; }
 
 .nav-links {
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 4px 28px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
   margin-left: auto;
   margin-right: 20px;
 }
