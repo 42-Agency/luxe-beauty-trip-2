@@ -12,40 +12,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="itinerary.css">
   <style>
-    .gt-hero {
-      margin-top: var(--header-h);
-      background: var(--navy);
-      padding: 96px 24px 80px;
-      text-align: center;
-      color: #fff;
-      position: relative;
-      overflow: hidden;
-    }
-    .gt-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url('images/seoul-garden.jpg') center/cover no-repeat;
-      opacity: 0.18;
-    }
-    .gt-hero-inner { position: relative; z-index: 2; max-width: 760px; margin: 0 auto; }
-    .gt-hero .itin-label { display: inline-block; margin-bottom: 20px; }
-    .gt-hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 5vw, 3.4rem);
-      font-weight: 700;
-      font-style: italic;
-      line-height: 1.2;
-      margin-bottom: 24px;
-      -webkit-font-smoothing: antialiased;
-    }
-    .gt-hero p {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      opacity: 0.82;
-      margin-bottom: 36px;
-      font-weight: 300;
-    }
+    /* Group trip specific styles */
     .gt-spots {
       display: inline-flex;
       align-items: center;
@@ -53,299 +20,42 @@
       background: rgba(212,131,122,0.18);
       border: 1px solid rgba(212,131,122,0.4);
       border-radius: 40px;
-      padding: 10px 24px;
-      font-size: 0.85rem;
+      padding: 8px 20px;
+      font-size: 0.82rem;
       font-weight: 500;
       letter-spacing: 0.06em;
       color: #ffd4cf;
-      margin-bottom: 36px;
+      margin-top: 20px;
+      display: inline-flex;
     }
     .gt-spots-dot {
-      width: 8px; height: 8px;
+      width: 7px; height: 7px;
       background: var(--rose);
       border-radius: 50%;
       animation: pulse 1.8s infinite;
+      flex-shrink: 0;
     }
     @keyframes pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.5; transform: scale(0.75); }
     }
 
-    .gt-body { max-width: 900px; margin: 0 auto; padding: 72px 24px; }
-
-    .gt-what {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 72px;
-      align-items: start;
-    }
-    .gt-what-text h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      font-style: italic;
-      color: var(--navy);
-      margin-bottom: 20px;
-      -webkit-font-smoothing: antialiased;
-    }
-    .gt-what-text p {
-      font-size: 0.97rem;
-      line-height: 1.85;
-      color: #555;
-      margin-bottom: 16px;
-    }
-    .gt-includes {
-      background: #fdf9f8;
-      border-radius: 16px;
-      padding: 32px;
-    }
-    .gt-includes h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      font-style: italic;
-      color: var(--navy);
-      margin-bottom: 20px;
-      -webkit-font-smoothing: antialiased;
-    }
-    .gt-includes ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .gt-includes li {
-      font-size: 0.92rem;
-      color: #555;
-      line-height: 1.5;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-    .gt-includes li::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      background: var(--rose);
-      border-radius: 50%;
-      margin-top: 7px;
-      flex-shrink: 0;
-    }
-
-    .gt-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-bottom: 72px;
-    }
-    .gt-stat {
-      text-align: center;
-      padding: 32px 20px;
-      border: 1px solid #eee;
-      border-radius: 14px;
-    }
-    .gt-stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      font-weight: 700;
-      font-style: italic;
-      color: var(--navy);
-      line-height: 1;
-      margin-bottom: 8px;
-      -webkit-font-smoothing: antialiased;
-    }
-    .gt-stat-label {
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #999;
-    }
-    .gt-stat-num--price { font-size: 1.6rem; }
-
-    .gt-who {
-      background: var(--navy);
-      border-radius: 20px;
-      padding: 48px;
-      margin-bottom: 72px;
-      color: #fff;
-    }
-    .gt-who h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      font-style: italic;
-      margin-bottom: 24px;
-      -webkit-font-smoothing: antialiased;
-    }
     .gt-who-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 14px;
+      margin-top: 20px;
     }
     .gt-who-item {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 10px;
-      padding: 16px 20px;
-      font-size: 0.9rem;
-      line-height: 1.55;
-      opacity: 0.88;
-    }
-
-    .gt-form-wrap {
       background: #fdf9f8;
-      border-radius: 20px;
-      padding: 56px 48px;
-      text-align: center;
-    }
-    .gt-form-wrap .itin-label { display: inline-block; margin-bottom: 16px; }
-    .gt-form-wrap h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      font-weight: 700;
-      font-style: italic;
-      color: var(--navy);
-      margin-bottom: 12px;
-      -webkit-font-smoothing: antialiased;
-    }
-    .gt-form-wrap .gt-form-sub {
-      font-size: 0.95rem;
-      color: #777;
-      margin-bottom: 36px;
-      line-height: 1.7;
-    }
-    .gt-form {
-      max-width: 480px;
-      margin: 0 auto;
-      text-align: left;
-    }
-    .gt-note {
-      font-size: 0.78rem;
-      color: #aaa;
-      text-align: center;
-      margin-top: 16px;
+      border: 1px solid #ece8e6;
+      border-radius: 10px;
+      padding: 16px 18px;
+      font-size: 0.88rem;
+      color: #555;
       line-height: 1.6;
     }
 
-    /* Section headers */
-    .gt-section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      font-style: italic;
-      color: var(--navy);
-      margin-bottom: 10px;
-      -webkit-font-smoothing: antialiased;
-    }
-    .gt-section-sub {
-      font-size: 0.92rem;
-      color: #888;
-      margin-bottom: 40px;
-    }
-
-    /* Day by day */
-    .gt-itinerary { margin-bottom: 72px; }
-    .gt-day {
-      display: grid;
-      grid-template-columns: 100px 1fr;
-      gap: 24px;
-      padding: 28px 0;
-      border-bottom: 1px solid #f0eded;
-      align-items: start;
-    }
-    .gt-day:last-child { border-bottom: none; }
-    .gt-day-num {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--rose);
-      padding-top: 4px;
-    }
-    .gt-day-tag {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      background: rgba(212,131,122,0.1);
-      color: var(--rose);
-      border-radius: 20px;
-      padding: 3px 12px;
-      margin-bottom: 8px;
-    }
-    .gt-day-content h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      font-style: italic;
-      color: var(--navy);
-      margin-bottom: 8px;
-      -webkit-font-smoothing: antialiased;
-    }
-    .gt-day-content p {
-      font-size: 0.92rem;
-      color: #666;
-      line-height: 1.8;
-    }
-    .gt-day-optional {
-      display: inline-block;
-      font-size: 0.75rem;
-      color: #aaa;
-      margin-top: 8px;
-      font-style: italic;
-    }
-
-    /* Pricing details */
-    .gt-pricing-details {
-      background: #fdf9f8;
-      border-radius: 20px;
-      padding: 48px;
-      margin-bottom: 72px;
-    }
-    .gt-pricing-details .gt-section-title { margin-bottom: 32px; }
-    .gt-pricing-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      margin-bottom: 32px;
-    }
-    .gt-pricing-item h4 {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #aaa;
-      margin-bottom: 8px;
-    }
-    .gt-pricing-item p {
-      font-size: 0.95rem;
-      color: #444;
-      line-height: 1.7;
-    }
-    .gt-price-big {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.7rem;
-      font-weight: 700;
-      font-style: italic;
-      color: var(--navy);
-      display: block;
-      margin-bottom: 4px;
-    }
-    .gt-insurance-note {
-      background: rgba(201,168,124,0.12);
-      border-left: 3px solid var(--tan);
-      border-radius: 0 8px 8px 0;
-      padding: 16px 20px;
-      margin-bottom: 32px;
-      font-size: 0.88rem;
-      color: #666;
-      line-height: 1.75;
-    }
-    .gt-insurance-note strong { color: var(--navy); }
     .gt-incl-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -387,28 +97,52 @@
       color: #ccc;
       flex-shrink: 0;
     }
-    .gt-disclaimer {
-      font-size: 0.78rem;
+
+    .gt-pricing-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+    .gt-pricing-item h4 {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
       color: #aaa;
+      margin-bottom: 6px;
+    }
+    .gt-pricing-item p {
+      font-size: 0.92rem;
+      color: #444;
+      line-height: 1.65;
+    }
+
+    .gt-insurance-note {
+      background: rgba(201,168,124,0.12);
+      border-left: 3px solid var(--tan);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin-bottom: 24px;
+      font-size: 0.87rem;
+      color: #666;
+      line-height: 1.75;
+    }
+    .gt-insurance-note strong { color: var(--navy); }
+
+    .gt-disclaimer {
+      font-size: 0.77rem;
+      color: #bbb;
       line-height: 1.85;
       border-top: 1px solid #ece8e6;
-      padding-top: 20px;
+      padding-top: 18px;
+      margin-top: 8px;
     }
 
     @media (max-width: 768px) {
-      .gt-what { grid-template-columns: 1fr; gap: 32px; }
-      .gt-stats { grid-template-columns: repeat(3, 1fr); }
       .gt-who-grid { grid-template-columns: 1fr; }
-      .gt-form-wrap { padding: 40px 24px; }
-      .gt-who { padding: 32px 24px; }
-      .gt-pricing-grid { grid-template-columns: 1fr; gap: 20px; }
       .gt-incl-grid { grid-template-columns: 1fr; gap: 20px; }
-      .gt-pricing-details { padding: 32px 24px; }
-      .gt-day { grid-template-columns: 72px 1fr; gap: 16px; }
-    }
-    @media (max-width: 540px) {
-      .gt-stats { grid-template-columns: 1fr; }
-      .gt-body { padding: 48px 20px; }
+      .gt-pricing-items { grid-template-columns: 1fr; gap: 16px; }
     }
   </style>
 </head>
@@ -444,222 +178,354 @@
   </header>
 
   <!-- HERO -->
-  <section class="gt-hero">
-    <div class="gt-hero-inner">
-      <p class="itin-label">K-Beauty Group Trip · Seoul, Korea</p>
-      <h1>Six Days of K-Beauty in Seoul.<br>Come Back With Better Skin and Stories You'll Tell for Years.</h1>
-      <p>A trip with women who get it — clinics, culture, great food, and a city that will genuinely surprise you. We handle everything, an experienced tour guide will be with you on the ground. You just book your flight.</p>
+  <div class="itin-hero" style="background-image:url('images/seoul-garden.jpg')">
+    <div class="itin-hero-overlay"></div>
+    <p class="itin-breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Group Trips &nbsp;/&nbsp; Seoul K-Beauty</p>
+    <div class="itin-hero-text">
+      <span class="itin-label">K-Beauty Group Trip · Seoul, Korea</span>
+      <h1>Six Days of K-Beauty in Seoul</h1>
+      <p class="itin-tagline">A small group of women. World-class clinics. A city that will genuinely surprise you.</p>
       <div class="gt-spots">
         <span class="gt-spots-dot"></span>
         Small group · Limited spots
       </div>
-      <br>
-      <a href="#waitlist" class="btn btn-rose">Join the Waitlist</a>
     </div>
-  </section>
+  </div>
 
-  <div class="gt-body">
+  <!-- STICKY TAB NAV -->
+  <nav class="itin-tabs" id="itinTabs">
+    <a href="#overview" class="itin-tab active">Overview</a>
+    <a href="#itinerary" class="itin-tab">Day by Day</a>
+    <a href="#includes" class="itin-tab">What's Included</a>
+    <a href="#waitlist" class="itin-tab">Join the Waitlist</a>
+  </nav>
 
-    <!-- STATS -->
-    <div class="gt-stats">
-      <div class="gt-stat">
-        <div class="gt-stat-num">Small</div>
-        <div class="gt-stat-label">Group · Limited Spots</div>
-      </div>
-      <div class="gt-stat">
-        <div class="gt-stat-num gt-stat-num--price">From $3,850*</div>
-        <div class="gt-stat-label">Per person</div>
-        <div style="font-size:0.75rem; color:#aaa; margin-top:10px; line-height:1.5;">Comparable women's wellness retreats run $5,000–$8,000+</div>
-      </div>
-      <div class="gt-stat">
-        <div class="gt-stat-num">6</div>
-        <div class="gt-stat-label">Days in Seoul</div>
-      </div>
-    </div>
+  <!-- BODY: TWO-COLUMN -->
+  <div class="itin-body">
+    <main class="itin-main">
 
-    <!-- ITINERARY -->
-    <div class="gt-itinerary" id="itinerary">
-      <h2 class="gt-section-title">Your Six Days</h2>
-      <p class="gt-section-sub">A rough shape of the trip — final schedule confirmed on booking.</p>
-
-      <div class="gt-day">
-        <div class="gt-day-num">Day 1</div>
-        <div class="gt-day-content">
-          <span class="gt-day-tag">Arrival</span>
-          <h3>Land, Check In & Welcome Dinner</h3>
-          <p>Arrive at Incheon International Airport and transfer to your hotel in central Seoul. Check in, get settled, and meet the group over a welcome dinner — your first taste of the city's energy and the women you'll be spending the week with.</p>
-        </div>
-      </div>
-
-      <div class="gt-day">
-        <div class="gt-day-num">Day 2</div>
-        <div class="gt-day-content">
-          <span class="gt-day-tag">Sightseeing</span>
-          <h3>Seoul — Palaces, Markets & a Traditional Korean Dinner</h3>
-          <p>A full day exploring the best of Seoul: Gyeongbokgung Palace, the narrow lanes of Bukchon Hanok Village, Insadong's art market, and Namsan Tower. End the day with a group traditional Korean dinner — a proper hansik spread, your introduction to Korean cuisine done properly.</p>
-        </div>
-      </div>
-
-      <div class="gt-day">
-        <div class="gt-day-num">Day 3</div>
-        <div class="gt-day-content">
-          <span class="gt-day-tag">Beauty Treatments</span>
-          <h3>Clinic Day — Your Personalised Treatment Plan</h3>
-          <p>The day you came for. Morning consultations at our pre-vetted Gangnam clinic with a licensed Korean dermatologist, followed by your personalised treatment session — skin boosters, laser toning, lifting treatments, or whatever your skin needs. All treatments performed by licensed Korean doctors. Clinic fees are paid directly to the clinic on the day.</p>
-        </div>
-      </div>
-
-      <div class="gt-day">
-        <div class="gt-day-num">Day 4</div>
-        <div class="gt-day-content">
-          <span class="gt-day-tag">Free Day</span>
-          <h3>Your Day, Your Way</h3>
-          <p>Sleep in. Explore Garosu-gil or Apgujeong at your own pace. Browse Shinsegae or spend the afternoon lost in a beauty store. This day is yours — structured around recovery from Day 3 and whatever Seoul has left on your list.</p>
-          <span class="gt-day-optional">Optional add-on: 13-step Korean hair treatment spa — bookable through Luxe Beauty Trip at additional cost.</span>
-        </div>
-      </div>
-
-      <div class="gt-day">
-        <div class="gt-day-num">Day 5</div>
-        <div class="gt-day-content">
-          <span class="gt-day-tag">Spa & Experiences</span>
-          <h3>Jjimjilbang, Colour Analysis & Farewell Dinner</h3>
-          <p>A morning at a traditional jjimjilbang — the full Korean bathhouse experience. Afternoon personal colour analysis session to discover your seasonal palette. Evening: a farewell group dinner, the last night together before everyone heads home.</p>
-        </div>
-      </div>
-
-      <div class="gt-day">
-        <div class="gt-day-num">Day 6</div>
-        <div class="gt-day-content">
-          <span class="gt-day-tag">Departure</span>
-          <h3>Farewell Morning & Airport Transfer</h3>
-          <p>A slow farewell breakfast before a final sweep through Myeongdong for last-minute skincare hauls. Then airport transfer. You leave with better skin, a carry-on full of K-beauty products, and a group chat that will not go quiet any time soon.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- PRICING DETAILS -->
-    <div class="gt-pricing-details" id="pricing">
-      <h2 class="gt-section-title">Pricing & What to Know</h2>
-
-      <div class="gt-pricing-grid">
-        <div class="gt-pricing-item">
-          <h4>Price Per Person</h4>
-          <p><span class="gt-price-big">From $3,850 USD*</span>Single supplement available — contact us for pricing.</p>
-        </div>
-        <div class="gt-pricing-item">
-          <h4>Accommodation</h4>
-          <p>5 nights in a <strong>4-star hotel or similar</strong> in central Seoul, twin share. Hotel confirmed at time of booking.</p>
-        </div>
-        <div class="gt-pricing-item">
-          <h4>Group Size</h4>
-          <p>Small group — intentionally kept intimate. Minimum numbers apply — in the unlikely event minimums aren't met, you will be offered an alternative date or a full refund.</p>
-        </div>
-        <div class="gt-pricing-item">
-          <h4>Deposit & Payment</h4>
-          <p>A deposit is required to secure your spot. Full balance due 60 days before departure. Payment details provided on application.</p>
-        </div>
-      </div>
-
-      <div class="gt-insurance-note">
-        <strong>Travel Insurance:</strong> Comprehensive travel insurance is strongly recommended for all guests, including cover for medical expenses, trip cancellation, and emergency evacuation. Luxe Beauty Trip is not liable for costs arising from cancellation, medical emergencies, or unforeseen circumstances.
-      </div>
-
-      <div class="gt-incl-grid">
-        <div class="gt-incl-col included">
-          <h4>What's Included</h4>
-          <ul>
-            <li>5 nights 4-star accommodation (twin share)</li>
-            <li>Airport transfers (arrival &amp; departure)</li>
-            <li>Welcome dinner (Day 1)</li>
-            <li>Traditional Korean group dinner (Day 2)</li>
-            <li>Farewell group dinner (Day 5)</li>
-            <li>All sightseeing &amp; cultural activities</li>
-            <li>Clinic consultation &amp; treatment planning</li>
-            <li>Personal colour analysis session</li>
-            <li>Jjimjilbang (Korean bathhouse) experience</li>
-            <li>All bookings &amp; logistics managed for you</li>
-            <li>Experienced on-the-ground guide throughout</li>
-          </ul>
-        </div>
-        <div class="gt-incl-col excluded">
-          <h4>Not Included</h4>
-          <ul>
-            <li>International flights</li>
-            <li>Travel insurance</li>
-            <li>Clinic treatment fees (paid directly to clinic)</li>
-            <li>Personal meals &amp; drinks (outside 3 group dinners)</li>
-            <li>Personal shopping</li>
-            <li>Optional 13-step hair treatment spa</li>
-            <li>Optional add-on treatments</li>
-            <li>Gratuities</li>
-          </ul>
-        </div>
-      </div>
-
-      <p class="gt-disclaimer">*Price is per person based on twin share (double occupancy) and includes 5 nights accommodation in a 4-star hotel or similar in Seoul, 3 group dinners, and all activities listed above. Single supplement is available on request. Prices are in USD and subject to change until booking is confirmed in writing. Clinic treatment costs are separate and paid directly to the clinic on the day of your appointment. International flights are not included. Luxe Beauty Trip strongly advises all guests to purchase comprehensive travel insurance prior to departure, including cover for medical treatment, trip cancellation, and emergency evacuation. Luxe Beauty Trip acts as a travel facilitator and is not a licensed medical provider.</p>
-    </div>
-
-    <!-- WHO IT'S FOR -->
-    <div class="gt-who">
-      <h2>This Trip Is For You If...</h2>
-      <div class="gt-who-grid">
-        <div class="gt-who-item">You've been curious about Korean skin treatments and want to actually do it — not just Google it</div>
-        <div class="gt-who-item">You're fed up paying a lot at home and getting results that don't quite match</div>
-        <div class="gt-who-item">You want a real trip somewhere new, not a beach resort you've seen a hundred times</div>
-        <div class="gt-who-item">You'd rather do this with a group of like-minded women than figure it all out alone</div>
-      </div>
-    </div>
-
-    <!-- WAITLIST FORM -->
-    <div class="gt-form-wrap" id="waitlist">
-      <p class="itin-label">Small Group · Limited Spots</p>
-      <h2>Get on the Waitlist</h2>
-      <p class="gt-form-sub">Dates and full itinerary dropping soon. Drop your details below and you'll be the first to know — and first in line when spots open.</p>
-
-      <form class="gt-form contact-form" action="https://formspree.io/f/meenwqbw" method="POST">
-        <input type="hidden" name="_subject" value="Experience Package Waitlist">
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="gtFirstName">First Name <span class="req">*</span></label>
-            <input type="text" id="gtFirstName" name="first_name" required>
+      <!-- OVERVIEW -->
+      <section class="itin-section" id="overview">
+        <div class="itin-highlights">
+          <div class="itin-highlight">
+            <span class="itin-highlight-val">6</span>
+            <span class="itin-highlight-label">Days</span>
           </div>
-          <div class="form-group">
-            <label for="gtLastName">Last Name <span class="req">*</span></label>
-            <input type="text" id="gtLastName" name="last_name" required>
+          <div class="itin-highlight">
+            <span class="itin-highlight-val">5</span>
+            <span class="itin-highlight-label">Nights</span>
+          </div>
+          <div class="itin-highlight">
+            <span class="itin-highlight-val">Seoul</span>
+            <span class="itin-highlight-label">South Korea</span>
+          </div>
+          <div class="itin-highlight">
+            <span class="itin-highlight-val">4★</span>
+            <span class="itin-highlight-label">Hotel</span>
           </div>
         </div>
 
-        <div class="form-group">
-          <label for="gtEmail">Email <span class="req">*</span></label>
-          <input type="email" id="gtEmail" name="email" required>
+        <h2 class="itin-section-heading">About This Trip</h2>
+        <p class="itin-overview-text">Luxe Beauty Trip was built by two women who did this themselves — fell in love with Seoul, got treatments they couldn't access at home, and came back wanting to bring other women along. This is that trip. Six days with a small group of women who are into it — clinic visits at Seoul's best dermatologists, treatments that aren't available back home at any price, and enough time to actually enjoy one of the world's most exciting cities. The food, the markets, the beauty culture — all of it.</p>
+
+        <h2 class="itin-section-heading" style="margin-top:48px;">This Trip Is For You If...</h2>
+        <div class="gt-who-grid">
+          <div class="gt-who-item">You've been curious about Korean skin treatments and want to actually do it — not just Google it</div>
+          <div class="gt-who-item">You're fed up paying a lot at home and getting results that don't quite match</div>
+          <div class="gt-who-item">You want a real trip somewhere new, not a beach resort you've seen a hundred times</div>
+          <div class="gt-who-item">You'd rather do this with a group of like-minded women than figure it all out alone</div>
+        </div>
+      </section>
+
+      <!-- DAY BY DAY -->
+      <section class="itin-section" id="itinerary">
+        <h2 class="itin-section-heading">Day by Day</h2>
+
+        <div class="day-accordion open">
+          <button class="day-toggle">
+            <span class="day-pill">Day 1</span>
+            <span class="day-toggle-title">Land, Check In &amp; Welcome Dinner</span>
+            <span class="day-toggle-loc">Seoul</span>
+            <span class="day-arrow">▾</span>
+          </button>
+          <div class="day-body">
+            <img src="images/seoul-garden.jpg" alt="Seoul arrival" class="day-img">
+            <p>Arrive at Incheon International Airport and transfer to your hotel in central Seoul. Check in, get settled, and meet the group over a welcome dinner — your first taste of the city's energy and the women you'll be spending the week with.</p>
+            <div class="day-tags">
+              <span class="tag tag-culture">Arrival</span>
+              <span class="tag tag-culture">Welcome Dinner</span>
+            </div>
+          </div>
         </div>
 
-        <div class="form-group">
-          <label for="gtCountry">Where are you based?</label>
-          <input type="text" id="gtCountry" name="location" placeholder="City, Country">
+        <div class="day-accordion">
+          <button class="day-toggle">
+            <span class="day-pill">Day 2</span>
+            <span class="day-toggle-title">Seoul Sightseeing &amp; Traditional Korean Dinner</span>
+            <span class="day-toggle-loc">Seoul</span>
+            <span class="day-arrow">▾</span>
+          </button>
+          <div class="day-body">
+            <img src="images/gyeongbokgung.jpg" alt="Gyeongbokgung Palace Seoul" class="day-img">
+            <p>A full day exploring the best of Seoul: Gyeongbokgung Palace, the narrow lanes of Bukchon Hanok Village, Insadong's art market, and Namsan Tower. End the day with a group traditional Korean dinner — a proper hansik spread, your introduction to Korean cuisine done properly.</p>
+            <div class="day-tags">
+              <span class="tag tag-culture">Gyeongbokgung Palace</span>
+              <span class="tag tag-culture">Bukchon Hanok Village</span>
+              <span class="tag tag-culture">Traditional Korean Dinner</span>
+            </div>
+          </div>
         </div>
 
-        <div class="form-group">
-          <label for="gtWhy">What excites you most about this trip? <span class="form-hint">Optional</span></label>
-          <textarea id="gtWhy" name="message" rows="3" placeholder="The treatments, the culture, doing it with a group..."></textarea>
+        <div class="day-accordion">
+          <button class="day-toggle">
+            <span class="day-pill">Day 3</span>
+            <span class="day-toggle-title">Clinic Day — Your Personalised Treatment Plan</span>
+            <span class="day-toggle-loc">Gangnam, Seoul</span>
+            <span class="day-arrow">▾</span>
+          </button>
+          <div class="day-body">
+            <img src="images/ultherapy-treatment.jpg" alt="Korean aesthetic clinic" class="day-img">
+            <p>The day you came for. Morning consultations at our pre-vetted Gangnam clinic with a licensed Korean dermatologist, followed by your personalised treatment session — skin boosters, laser toning, lifting treatments, or whatever your skin needs. All treatments performed by licensed Korean doctors. Clinic fees are paid directly to the clinic on the day.</p>
+            <div class="day-tags">
+              <span class="tag tag-beauty">Doctor Consultation</span>
+              <span class="tag tag-beauty">Aesthetic Treatments</span>
+              <span class="tag tag-beauty">Gangnam Clinic</span>
+            </div>
+          </div>
         </div>
 
-        <button type="submit" class="btn btn-rose" style="width:100%">Reserve My Spot on the Waitlist</button>
-      </form>
+        <div class="day-accordion">
+          <button class="day-toggle">
+            <span class="day-pill">Day 4</span>
+            <span class="day-toggle-title">Free Day — Your Way</span>
+            <span class="day-toggle-loc">Seoul</span>
+            <span class="day-arrow">▾</span>
+          </button>
+          <div class="day-body">
+            <img src="images/garosu-gil.jpg" alt="Garosu-gil Seoul" class="day-img">
+            <p>Sleep in. Explore Garosu-gil or Apgujeong at your own pace. Browse Shinsegae or spend the afternoon lost in a beauty store. This day is yours — structured around recovery from Day 3 and whatever Seoul has left on your list.</p>
+            <div class="day-tags">
+              <span class="tag tag-culture">Free Day</span>
+              <span class="tag tag-culture">Garosu-gil</span>
+              <span class="tag tag-culture">Shopping</span>
+            </div>
+            <p style="font-size:0.83rem; color:#aaa; margin-top:14px; font-style:italic;">Optional add-on: 13-step Korean hair treatment spa — bookable through Luxe Beauty Trip at additional cost.</p>
+          </div>
+        </div>
 
-      <p style="font-size:0.88rem; color:#777; margin-bottom:20px;">Every clinic on this itinerary has been personally vetted by Diana, a Registered Nurse.</p>
+        <div class="day-accordion">
+          <button class="day-toggle">
+            <span class="day-pill">Day 5</span>
+            <span class="day-toggle-title">Jjimjilbang, Colour Analysis &amp; Farewell Dinner</span>
+            <span class="day-toggle-loc">Seoul</span>
+            <span class="day-arrow">▾</span>
+          </button>
+          <div class="day-body">
+            <img src="images/colour-analysis.jpg" alt="Personal colour analysis Seoul" class="day-img">
+            <p>A morning at a traditional jjimjilbang — the full Korean bathhouse experience. Afternoon personal colour analysis session to discover your seasonal palette. Evening: a farewell group dinner, the last night together before everyone heads home.</p>
+            <div class="day-tags">
+              <span class="tag tag-beauty">Jjimjilbang</span>
+              <span class="tag tag-beauty">Colour Analysis</span>
+              <span class="tag tag-culture">Farewell Dinner</span>
+            </div>
+          </div>
+        </div>
 
-      <p class="gt-note">Submitting this form holds your interest only — no payment is taken. We'll be in touch with full itinerary details and next steps. Pricing starts from $3,850 USD* per person (includes 5 nights accommodation) and will be confirmed at time of booking. Flights and clinic treatment fees are separate.</p>
-    </div>
+        <div class="day-accordion">
+          <button class="day-toggle">
+            <span class="day-pill">Day 6</span>
+            <span class="day-toggle-title">Farewell Morning &amp; Airport Transfer</span>
+            <span class="day-toggle-loc">Seoul → Incheon</span>
+            <span class="day-arrow">▾</span>
+          </button>
+          <div class="day-body">
+            <img src="images/namsan-seoul.jpg" alt="Seoul farewell morning" class="day-img">
+            <p>A slow farewell breakfast before a final sweep through Myeongdong for last-minute skincare hauls. Then airport transfer. You leave with better skin, a carry-on full of K-beauty products, and a group chat that will not go quiet any time soon.</p>
+            <div class="day-tags">
+              <span class="tag tag-culture">Myeongdong</span>
+              <span class="tag tag-culture">Airport Transfer</span>
+              <span class="tag tag-culture">Departure</span>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- WHAT'S INCLUDED -->
+      <section class="itin-section" id="includes">
+        <h2 class="itin-section-heading">What's Included</h2>
+
+        <div class="gt-incl-grid">
+          <div class="gt-incl-col included">
+            <h4>Included</h4>
+            <ul>
+              <li>5 nights 4-star accommodation (twin share)</li>
+              <li>Airport transfers (arrival &amp; departure)</li>
+              <li>Welcome dinner (Day 1)</li>
+              <li>Traditional Korean group dinner (Day 2)</li>
+              <li>Farewell group dinner (Day 5)</li>
+              <li>All sightseeing &amp; cultural activities</li>
+              <li>Clinic consultation &amp; treatment planning</li>
+              <li>Personal colour analysis session</li>
+              <li>Jjimjilbang (Korean bathhouse) experience</li>
+              <li>All bookings &amp; logistics managed for you</li>
+              <li>Experienced on-the-ground guide throughout</li>
+            </ul>
+          </div>
+          <div class="gt-incl-col excluded">
+            <h4>Not Included</h4>
+            <ul>
+              <li>International flights</li>
+              <li>Travel insurance</li>
+              <li>Clinic treatment fees (paid directly to clinic)</li>
+              <li>Personal meals &amp; drinks (outside 3 group dinners)</li>
+              <li>Personal shopping</li>
+              <li>Optional 13-step hair treatment spa</li>
+              <li>Optional add-on treatments</li>
+              <li>Gratuities</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 class="itin-section-heading" style="margin-top:48px;">Pricing</h2>
+        <div class="gt-pricing-items">
+          <div class="gt-pricing-item">
+            <h4>Price Per Person</h4>
+            <p>From $3,850 USD* — based on twin share. Single supplement available on request.</p>
+          </div>
+          <div class="gt-pricing-item">
+            <h4>Accommodation</h4>
+            <p>5 nights in a 4-star hotel or similar in central Seoul, twin share. Hotel confirmed at time of booking.</p>
+          </div>
+          <div class="gt-pricing-item">
+            <h4>Group Size</h4>
+            <p>Small group — intentionally kept intimate. Minimum numbers apply. If minimums aren't met, you'll be offered an alternative date or a full refund.</p>
+          </div>
+          <div class="gt-pricing-item">
+            <h4>Deposit &amp; Payment</h4>
+            <p>A deposit is required to secure your spot. Full balance due 60 days before departure. Payment details provided on application.</p>
+          </div>
+        </div>
+
+        <div class="gt-insurance-note">
+          <strong>Travel Insurance:</strong> Comprehensive travel insurance is strongly recommended for all guests, including cover for medical expenses, trip cancellation, and emergency evacuation. Luxe Beauty Trip is not liable for costs arising from cancellation, medical emergencies, or unforeseen circumstances.
+        </div>
+
+        <p class="gt-disclaimer">*Price is per person based on twin share (double occupancy) and includes 5 nights accommodation in a 4-star hotel or similar in Seoul, 3 group dinners, and all activities listed above. Single supplement is available on request. Prices are in USD and subject to change until booking is confirmed in writing. Clinic treatment costs are separate and paid directly to the clinic on the day of your appointment. International flights are not included. Luxe Beauty Trip strongly advises all guests to purchase comprehensive travel insurance prior to departure, including cover for medical treatment, trip cancellation, and emergency evacuation. Luxe Beauty Trip acts as a travel facilitator and is not a licensed medical provider.</p>
+      </section>
+
+      <!-- WAITLIST -->
+      <section class="itin-section" id="waitlist">
+        <h2 class="itin-section-heading">Join the Waitlist</h2>
+        <p class="itin-overview-text">Dates dropping soon. Drop your details below and you'll be first to know — and first in line when spots open.</p>
+
+        <form class="contact-form" action="https://formspree.io/f/meenwqbw" method="POST">
+          <input type="hidden" name="_subject" value="Seoul K-Beauty Group Trip Waitlist">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="gtFirstName">First Name <span class="req">*</span></label>
+              <input type="text" id="gtFirstName" name="first_name" required>
+            </div>
+            <div class="form-group">
+              <label for="gtLastName">Last Name <span class="req">*</span></label>
+              <input type="text" id="gtLastName" name="last_name" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="gtEmail">Email <span class="req">*</span></label>
+            <input type="email" id="gtEmail" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="gtCountry">Where are you based?</label>
+            <input type="text" id="gtCountry" name="location" placeholder="City, Country">
+          </div>
+          <div class="form-group">
+            <label for="gtWhy">What excites you most about this trip? <span class="form-hint">Optional</span></label>
+            <textarea id="gtWhy" name="message" rows="3" placeholder="The treatments, the culture, doing it with a group..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-rose" style="width:100%">Reserve My Spot on the Waitlist</button>
+        </form>
+
+        <p style="font-size:0.8rem; color:#aaa; margin-top:20px; line-height:1.65;">Submitting this form holds your interest only — no payment is taken. We'll be in touch with full itinerary details and next steps. Pricing starts from $3,850 USD* per person (includes 5 nights accommodation) and will be confirmed at time of booking. Flights and clinic treatment fees are separate.</p>
+        <p style="font-size:0.88rem; color:#777; margin-top:12px;">Every clinic on this itinerary has been personally vetted by Diana, a Registered Nurse.</p>
+      </section>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="itin-sidebar">
+      <div class="sidebar-sticky">
+        <div class="sidebar-card">
+          <p class="sidebar-from">K-Beauty Group Trip · From</p>
+          <p class="sidebar-price">$3,850 USD*</p>
+          <p style="font-size:0.78rem; color:#aaa; margin: -6px 0 18px; line-height:1.5;">Per person · Small group · Limited spots</p>
+          <a href="#waitlist" class="btn btn-rose sidebar-btn">Join the Waitlist</a>
+          <hr class="sidebar-divider">
+          <div class="sidebar-trust-item"><span class="sidebar-trust-icon">✦</span>6 days · 5 nights in Seoul</div>
+          <div class="sidebar-trust-item"><span class="sidebar-trust-icon">✦</span>Small group — limited spots</div>
+          <div class="sidebar-trust-item"><span class="sidebar-trust-icon">✦</span>5 nights 4-star accommodation</div>
+          <div class="sidebar-trust-item"><span class="sidebar-trust-icon">✦</span>3 group dinners included</div>
+          <div class="sidebar-trust-item"><span class="sidebar-trust-icon">✦</span>All clinics vetted by Diana RN</div>
+          <div class="sidebar-trust-item"><span class="sidebar-trust-icon">✦</span>Travel insurance strongly recommended</div>
+          <hr class="sidebar-divider">
+          <div class="sidebar-advisor">
+            <div class="advisor-avatar">S</div>
+            <div>
+              <p class="advisor-info-name">Sophia &amp; Diana</p>
+              <p class="advisor-info-role">Your Luxe Beauty Trip Hosts</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
 
   </div>
+
+  <!-- BOTTOM CTA -->
+  <section class="itin-cta">
+    <h2>Not Sure if This Trip Is Right for You?</h2>
+    <p>Book a free discovery call and we'll answer every question — treatments, costs, logistics, what to expect. No pressure, no commitment.</p>
+    <a href="index.html#contact" class="btn btn-rose">Book a Free Call</a>
+  </section>
 
   <footer class="footer">
     <p>&copy; 2025 Luxe Beauty Trip. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    document.querySelectorAll('.day-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.closest('.day-accordion').classList.toggle('open');
+      });
+    });
+
+    const itinSections = document.querySelectorAll('.itin-section[id]');
+    const itinTabs = document.querySelectorAll('.itin-tab');
+    const headerH = document.getElementById('header')?.offsetHeight || 72;
+    const tabsH = document.getElementById('itinTabs')?.offsetHeight || 50;
+    const scrollOffset = headerH + tabsH + 16;
+
+    window.addEventListener('scroll', () => {
+      let current = itinSections[0]?.id || '';
+      itinSections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - scrollOffset) current = s.id;
+      });
+      itinTabs.forEach(tab => {
+        tab.classList.toggle('active', tab.getAttribute('href') === '#' + current);
+      });
+    }, { passive: true });
+
+    itinTabs.forEach(tab => {
+      tab.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(tab.getAttribute('href'));
+        if (target) {
+          const y = target.getBoundingClientRect().top + window.scrollY - scrollOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
