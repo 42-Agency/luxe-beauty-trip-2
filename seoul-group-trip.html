@@ -160,10 +160,23 @@
       .gt-form-wrap { padding: 24px 20px; }
     }
 
+    /* Uniform day images */
+    .itin-main .day-img {
+      width: 100%;
+      max-width: 420px;
+      height: 220px;
+      aspect-ratio: unset;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 18px;
+      display: block;
+    }
+
     @media (max-width: 768px) {
       .gt-who-grid { grid-template-columns: 1fr; }
       .gt-incl-grid { grid-template-columns: 1fr; gap: 20px; }
       .gt-pricing-items { grid-template-columns: 1fr; gap: 16px; }
+      .itin-main .day-img { max-width: 100%; height: 200px; }
     }
   </style>
 </head>
