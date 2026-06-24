@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Guide — Luxe Beauty Trip</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <style>
+    :root {
+      --navy:  #1C3A4A;
+      --rose:  #D4837A;
+      --tan:   #C9A87C;
+      --white: #ffffff;
+      --text:  #2C2C2C;
+      --silk:  #fdf9f8;
+      --border: #ece8e6;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    img { display: block; max-width: 100%; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      color: var(--text);
+      background: #f5f5f3;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.7;
+    }
+
+    /* ===== DOCUMENT WRAPPER ===== */
+    .doc {
+      max-width: 820px;
+      margin: 40px auto;
+      background: var(--white);
+      box-shadow: 0 4px 40px rgba(0,0,0,0.10);
+    }
+
+    /* ===== COVER ===== */
+    .cover {
+      background: var(--navy);
+      padding: 80px 72px 72px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 30%, rgba(212,131,122,0.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .cover-logo {
+      height: 52px;
+      width: auto;
+      margin: 0 auto 48px;
+      position: relative;
+    }
+    .cover-tag {
+      display: inline-block;
+      background: rgba(212,131,122,0.22);
+      border: 1px solid rgba(212,131,122,0.45);
+      border-radius: 40px;
+      padding: 6px 20px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 24px;
+      position: relative;
+    }
+    .cover h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .cover-sub {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.04em;
+      position: relative;
+    }
+    .cover-divider {
+      width: 48px;
+      height: 2px;
+      background: var(--tan);
+      margin: 28px auto 28px;
+      position: relative;
+    }
+    .cover-intro {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.80);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.8;
+      position: relative;
+    }
+
+    /* ===== SECTION SHARED ===== */
+    .section {
+      padding: 64px 72px;
+    }
+    .section.alt {
+      background: var(--silk);
+    }
+    .section-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 12px;
+    }
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.85rem;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+    .section-lead {
+      font-size: 1.02rem;
+      font-weight: 300;
+      color: #555;
+      margin-bottom: 36px;
+      max-width: 600px;
+      line-height: 1.8;
+    }
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: var(--tan);
+      margin-bottom: 36px;
+    }
+
+    /* ===== WHY KOREA GRID ===== */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .why-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 22px;
+    }
+    .why-card.full { grid-column: 1 / -1; }
+    .why-icon {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+    .why-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .why-card p {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* ===== ITINERARY ===== */
+    .itin-days {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .itin-day {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .itin-day:last-child { border-bottom: none; }
+    .itin-day-num {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 2px;
+    }
+    .itin-day-circle {
+      width: 40px;
+      height: 40px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.02em;
+      flex-shrink: 0;
+    }
+    .itin-day-line {
+      flex: 1;
+      width: 1px;
+      background: var(--border);
+      margin: 6px 0 0;
+    }
+    .itin-day:last-child .itin-day-line { display: none; }
+    .itin-day-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .itin-day-body {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: #666;
+      line-height: 1.7;
+    }
+    .itin-tag {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      margin-right: 6px;
+      margin-bottom: 10px;
+    }
+    .tag-treatment {
+      background: rgba(212,131,122,0.12);
+      color: var(--rose);
+      border: 1px solid rgba(212,131,122,0.3);
+    }
+    .tag-culture {
+      background: rgba(28,58,74,0.08);
+      color: var(--navy);
+      border: 1px solid rgba(28,58,74,0.18);
+    }
+    .tag-wellness {
+      background: rgba(201,168,124,0.15);
+      color: #8a6e44;
+      border: 1px solid rgba(201,168,124,0.35);
+    }
+
+    /* ===== SERVICES ===== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px 18px;
+      border-top: 3px solid var(--rose);
+    }
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .service-card p {
+      font-size: 0.84rem;
+      font-weight: 300;
+      color: #666;
+      line-height: 1.65;
+    }
+
+    /* ===== EXPECTATIONS ===== */
+    .expect-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .expect-box {
+      border-radius: 12px;
+      padding: 28px 26px;
+    }
+    .expect-box.from-us {
+      background: var(--navy);
+    }
+    .expect-box.from-you {
+      background: var(--white);
+      border: 1px solid var(--border);
+    }
+    .expect-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      font-style: italic;
+      margin-bottom: 18px;
+    }
+    .from-us h3 { color: var(--white); }
+    .from-you h3 { color: var(--navy); }
+    .expect-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .expect-list li {
+      font-size: 0.86rem;
+      font-weight: 300;
+      line-height: 1.6;
+      padding-left: 18px;
+      position: relative;
+    }
+    .from-us .expect-list li { color: rgba(255,255,255,0.85); }
+    .from-you .expect-list li { color: #555; }
+    .expect-list li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      font-size: 0.6rem;
+      top: 5px;
+    }
+    .from-us .expect-list li::before { color: var(--rose); }
+    .from-you .expect-list li::before { color: var(--tan); }
+
+    .scope-note {
+      margin-top: 24px;
+      background: rgba(212,131,122,0.08);
+      border: 1px solid rgba(212,131,122,0.25);
+      border-radius: 10px;
+      padding: 18px 20px;
+      font-size: 0.86rem;
+      font-weight: 400;
+      color: #555;
+      line-height: 1.7;
+    }
+    .scope-note strong {
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    /* ===== FOUNDERS ===== */
+    .founders-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .founder-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .founder-photo {
+      height: 200px;
+      background: linear-gradient(135deg, #e8d8d5 0%, #d4c4c0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #b0a0a0;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .founder-body {
+      padding: 22px 20px;
+    }
+    .founder-title {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 6px;
+    }
+    .founder-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .founder-body p {
+      font-size: 0.86rem;
+      font-weight: 300;
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .founder-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .founder-contact a, .founder-contact span {
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: var(--navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .contact-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--rose);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ===== FOOTER ===== */
+    .guide-footer {
+      background: var(--navy);
+      padding: 40px 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .guide-footer-logo {
+      height: 36px;
+      width: auto;
+    }
+    .guide-footer-text {
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.55);
+      text-align: right;
+      line-height: 1.6;
+    }
+    .guide-footer-text a {
+      color: var(--rose);
+      text-decoration: none;
+    }
+
+    /* ===== PRINT ===== */
+    @media print {
+      body { background: white; }
+      .doc { margin: 0; box-shadow: none; max-width: 100%; }
+      .cover { page-break-after: always; }
+      .section { page-break-inside: avoid; }
+    }
+
+    @media (max-width: 640px) {
+      .section { padding: 48px 28px; }
+      .cover { padding: 56px 28px 52px; }
+      .cover h1 { font-size: 2rem; }
+      .why-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .expect-cols { grid-template-columns: 1fr; }
+      .founders-grid { grid-template-columns: 1fr; }
+      .guide-footer { flex-direction: column; text-align: center; }
+      .guide-footer-text { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="doc">
+
+  <!-- ===== COVER ===== -->
+  <div class="cover">
+    <img src="images/logo.png" alt="Luxe Beauty Trip" class="cover-logo">
+    <div class="cover-tag">Client Welcome Guide</div>
+    <h1>Welcome to Your<br>Korea Beauty Journey</h1>
+    <div class="cover-divider"></div>
+    <p class="cover-intro">
+      You have taken the first step toward one of the most transformative experiences of your life. This guide covers everything you need to know about who we are, how we work, and what to expect as a Luxe Beauty Trip client.
+    </p>
+  </div>
+
+  <!-- ===== SECTION 1: ABOUT US ===== -->
+  <div class="section">
+    <div class="section-label">Who We Are</div>
+    <h2>More Than a Trip. A Transformation.</h2>
+    <div class="divider"></div>
+    <p class="section-lead">
+      Luxe Beauty Trip is a curated Korea beauty tourism consultancy. We plan personalized journeys that combine world-class aesthetic treatments with authentic cultural experiences in South Korea. Every detail is handled for you so you can arrive, relax, and focus entirely on your results.
+    </p>
+    <p style="font-size: 0.94rem; font-weight: 300; color: #555; line-height: 1.8; margin-bottom: 20px;">
+      We were founded by two women who share a deep passion for Korean skincare, aesthetic medicine, and the kind of travel that leaves you genuinely changed. One is a seasoned beauty and travel curator. The other is a Registered Nurse with clinical expertise in aesthetic procedures. Together, we bridge the gap between wanting something and getting it safely, confidently, and beautifully.
+    </p>
+    <p style="font-size: 0.94rem; font-weight: 300; color: #555; line-height: 1.8;">
+      We do not just book flights and clinics. We vet every clinic personally, build your treatment plan around your individual skin goals, and stay with you from the first discovery call to the day you land back home with glowing skin and stories worth telling.
+    </p>
+  </div>
+
+  <!-- ===== SECTION 2: WHY KOREA ===== -->
+  <div class="section alt">
+    <div class="section-label">Why Korea</div>
+    <h2>Why Women Are Travelling to Seoul for Beauty</h2>
+    <div class="divider"></div>
+    <p class="section-lead">
+      Korea is not a trend. It is the global standard for aesthetic medicine and skincare innovation, and North American women are finally catching on.
+    </p>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🏥</div>
+        <h3>Doctors Only. Always.</h3>
+        <p>In Korea, all aesthetic procedures are performed by licensed medical doctors. Not nurses, not aestheticians. Every injection, laser, and energy device treatment is done by a physician trained specifically in aesthetic medicine.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">⚡</div>
+        <h3>Technology You Cannot Get at Home</h3>
+        <p>Korean clinics use devices that have not yet reached North America. Shurink Universe, Sylfirm X, Juvelook, Oligio, and Rejuran (the Korean original) are available in Seoul years ahead of Western markets.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💰</div>
+        <h3>40 to 60% Less Expensive</h3>
+        <p>The same treatment that costs $3,000 in New York or Toronto can be done in Seoul by a specialist, in a world-class clinic, for a fraction of the price. Many clients cover the cost of their flights with savings on treatments alone.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🌸</div>
+        <h3>A Complete Experience</h3>
+        <p>Seoul is extraordinary. Ancient palaces, bustling markets, rooftop hot springs, colour analysis studios, and the best skincare shopping on earth. The treatments are the reason you come. The city is why you will want to return.</p>
+      </div>
+      <div class="why-card full">
+        <div class="why-icon">🩺</div>
+        <h3>Clinical Rigour at Every Level</h3>
+        <p>Korean aesthetic clinics operate at hospital-grade standards. Protocols, aftercare, and follow-up are thorough and well-documented. Our RN co-founder personally reviews every clinic on our list for safety, hygiene standards, and treatment quality before we ever send a client through their doors.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 3: SAMPLE ITINERARY ===== -->
+  <div class="section">
+    <div class="section-label">Sample Itinerary</div>
+    <h2>What a Luxe Beauty Trip Looks Like</h2>
+    <div class="divider"></div>
+    <p class="section-lead">
+      Below is a sample overview of a 6-day Seoul retreat. Your exact itinerary is shaped around your treatment plan, your goals, and your pace.
+    </p>
+
+    <div class="itin-days">
+      <div class="itin-day">
+        <div class="itin-day-num">
+          <div class="itin-day-circle">D1</div>
+          <div class="itin-day-line"></div>
+        </div>
+        <div>
+          <div class="itin-day-title">Arrival and Welcome</div>
+          <span class="itin-tag tag-culture">Cultural</span>
+          <p class="itin-day-body">Private airport transfer to your hotel in Gangnam. Check-in, freshen up, and join us for an orientation dinner in Apgujeong. We walk you through your personalised treatment schedule, answer every question, and set you up for the week ahead.</p>
+        </div>
+      </div>
+
+      <div class="itin-day">
+        <div class="itin-day-num">
+          <div class="itin-day-circle">D2</div>
+          <div class="itin-day-line"></div>
+        </div>
+        <div>
+          <div class="itin-day-title">First Treatment Day</div>
+          <span class="itin-tag tag-treatment">Treatment</span>
+          <p class="itin-day-body">Morning clinic consultation. Your doctor reviews your skin in person, confirms your treatment plan, and begins your first session. Common Day 2 treatments include Rejuran, skin boosters, or laser toning. Afternoon free to explore Garosu-gil or rest at the hotel.</p>
+        </div>
+      </div>
+
+      <div class="itin-day">
+        <div class="itin-day-num">
+          <div class="itin-day-circle">D3</div>
+          <div class="itin-day-line"></div>
+        </div>
+        <div>
+          <div class="itin-day-title">Cultural Immersion Day</div>
+          <span class="itin-tag tag-culture">Cultural</span>
+          <p class="itin-day-body">Rest your skin and explore the city. Gyeongbokgung Palace, Bukchon Hanok Village, Insadong market. Traditional Korean lunch. Optional: personal colour analysis studio session to discover your seasonal palette. This day is about Seoul, not procedures.</p>
+        </div>
+      </div>
+
+      <div class="itin-day">
+        <div class="itin-day-num">
+          <div class="itin-day-circle">D4</div>
+          <div class="itin-day-line"></div>
+        </div>
+        <div>
+          <div class="itin-day-title">Second Treatment and Shopping</div>
+          <span class="itin-tag tag-treatment">Treatment</span>
+          <span class="itin-tag tag-culture">Cultural</span>
+          <p class="itin-day-body">Morning clinic appointment for your second round of treatments, which may include HIFU, Sylfirm X, or thread lift depending on your plan. Afternoon in Myeongdong or the Shinsegae Department Store beauty hall, where our team guides you through the best skincare buys to take home.</p>
+        </div>
+      </div>
+
+      <div class="itin-day">
+        <div class="itin-day-num">
+          <div class="itin-day-circle">D5</div>
+          <div class="itin-day-line"></div>
+        </div>
+        <div>
+          <div class="itin-day-title">Wellness and Spa Day</div>
+          <span class="itin-tag tag-wellness">Wellness</span>
+          <p class="itin-day-body">A restorative day. Traditional jjimjilbang experience at one of Seoul's iconic Korean bathhouses, or rooftop mineral hot springs at Starfield. Optional: 13-step Korean hair treatment spa in the afternoon. An early evening to pack, reflect, and celebrate your results.</p>
+        </div>
+      </div>
+
+      <div class="itin-day">
+        <div class="itin-day-num">
+          <div class="itin-day-circle">D6</div>
+          <div class="itin-day-line"></div>
+        </div>
+        <div>
+          <div class="itin-day-title">Departure</div>
+          <span class="itin-tag tag-culture">Departure</span>
+          <p class="itin-day-body">Private transfer to Incheon Airport. Aftercare kit and skincare instructions provided before you board. We remain reachable for any post-trip questions in the weeks that follow. You leave Seoul rested, renewed, and already planning your return.</p>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top: 28px; font-size: 0.82rem; font-style: italic; color: #999;">* Treatments are booked and priced separately from the trip package. Your personalised treatment plan is confirmed during your intake consultation.</p>
+  </div>
+
+  <!-- ===== SECTION 4: WHAT WE DO ===== -->
+  <div class="section alt">
+    <div class="section-label">Our Services</div>
+    <h2>Everything We Handle for You</h2>
+    <div class="divider"></div>
+    <p class="section-lead">
+      From the moment you sign on as a client, we are your single point of contact for everything. Here is what that means in practice.
+    </p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Travel Planning</h3>
+        <p>Accommodation recommendations, transfer coordination, and a day-by-day itinerary built around your travel dates and pacing preferences. We make sure the logistics never get in the way of the experience.</p>
+      </div>
+      <div class="service-card">
+        <h3>Clinic Introductions</h3>
+        <p>Every clinic on our list has been personally vetted by our RN. We match you to the right clinic based on your treatment goals, budget, and skin type, and we send a full briefing to your doctor before your appointment.</p>
+      </div>
+      <div class="service-card">
+        <h3>Treatment Booking</h3>
+        <p>We handle all clinic bookings on your behalf, communicate in Korean, confirm appointments, and make sure every session is scheduled at the right point in your itinerary to allow proper recovery time.</p>
+      </div>
+      <div class="service-card">
+        <h3>Appointment Coordination</h3>
+        <p>Confirmations, reminders, clinic prep instructions, and post-treatment aftercare guidance. We coordinate directly with the clinics so nothing falls through and you know exactly what to expect before each appointment.</p>
+      </div>
+      <div class="service-card">
+        <h3>Phone Support</h3>
+        <p>Available via WhatsApp throughout your trip. If a reaction concerns you, if an appointment changes, or if you simply need to know which exit to take from Gangnam station, we are there.</p>
+      </div>
+      <div class="service-card">
+        <h3>Concierge Support</h3>
+        <p>Restaurant reservations, shopping guidance, cultural recommendations, translation assistance, and on-the-ground problem solving. We are your local expert even though we are not always physically with you.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 5: EXPECTATIONS ===== -->
+  <div class="section">
+    <div class="section-label">Working Together</div>
+    <h2>What We Each Commit To</h2>
+    <div class="divider"></div>
+    <p class="section-lead">
+      A great trip is built on clarity. Here is exactly what you can count on from us, and what we ask of you in return.
+    </p>
+
+    <div class="expect-cols">
+      <div class="expect-box from-us">
+        <h3>What You Can Expect From Us</h3>
+        <ul class="expect-list">
+          <li>A response to all messages within 2 business days during your planning window. Discovery and planning calls are scheduled on set days so please allow for this when reaching out.</li>
+          <li>A personalised treatment plan built around your skin goals, health history, and budget, reviewed by Diana, our Registered Nurse, before anything is confirmed.</li>
+          <li>All clinic communications handled in Korean on your behalf. You will never need to navigate language barriers on your own.</li>
+          <li>Flight and hotel bookings handled directly by Diana as a licensed travel agent, for clients on the Concierge Package. No third parties, no markups you cannot see.</li>
+          <li>A complete pre-trip briefing covering your appointment schedule, clinic addresses, what to bring, pre-treatment prep, and aftercare notes.</li>
+          <li>WhatsApp support during your trip, Monday to Friday 9am to 6pm Korea Standard Time. We are reachable for clinic questions, logistics, and anything unexpected.</li>
+          <li>Post-trip follow-up within one week of your return to check in on your results, answer aftercare questions, and ensure you are happy.</li>
+          <li>Full transparency around scope. You will always be informed before any additional charges apply and nothing is billed without your written confirmation.</li>
+        </ul>
+      </div>
+      <div class="expect-box from-you">
+        <h3>What We Ask of You</h3>
+        <ul class="expect-list">
+          <li>Complete your client intake form within 7 days of signing. This covers your skin history, health information, treatment goals, and travel preferences. Without it, we cannot build your plan.</li>
+          <li>Respond to planning messages within 3 business days. Planning timelines are tight and delays on your end create delays across your entire trip preparation.</li>
+          <li>Disclose your full health history accurately. This is not optional. Incomplete information creates real safety risks during aesthetic treatments and we cannot be responsible for outcomes when we have not been given accurate information.</li>
+          <li>Work exclusively with Luxe Beauty Trip for the planning of this trip. We invest significant time researching and coordinating on your behalf and ask for the same commitment in return.</li>
+          <li>Arrive on time to all clinic appointments. Korean clinics operate on strict schedules. Late arrivals may result in a shortened or cancelled session with no refund.</li>
+          <li>Notify us of any changes to your plans as early as possible. Late changes can trigger supplier cancellation fees which become your responsibility.</li>
+          <li>Follow all pre and post-treatment instructions from your doctor and from Diana. Recovery guidelines exist for your safety and ignoring them affects your results.</li>
+          <li>Treat this as a partnership. We do our best work when clients are responsive, honest, and trust the process we have built.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="scope-note">
+      <strong>A note on scope and time:</strong> Your package includes up to <strong>[X] hours</strong> of dedicated planning and coordination support, covering everything from intake through your return home. If your needs go beyond this — for example additional clinic research, a significantly extended itinerary, or ongoing individual support after the trip — additional time is billed at <strong>$[X] per hour</strong> and invoiced monthly. We will always flag this before it applies and will never proceed without your written confirmation.
+    </div>
+  </div>
+
+  <!-- ===== SECTION 6: FOUNDERS ===== -->
+  <div class="section alt">
+    <div class="section-label">Your Team</div>
+    <h2>Meet the Founders</h2>
+    <div class="divider"></div>
+    <p class="section-lead">
+      We are two women who believe that great skin is not a luxury, it is something every woman deserves access to. We built Luxe Beauty Trip because we wanted to make that possible.
+    </p>
+
+    <div class="founders-grid">
+      <div class="founder-card">
+        <div class="founder-photo">[ Photo of Sophia ]</div>
+        <div class="founder-body">
+          <div class="founder-title">Co-Founder and Trip Curator</div>
+          <h3>Sophia</h3>
+          <p>Sophia is the vision behind Luxe Beauty Trip. With years of experience navigating Seoul's beauty scene and a passion for curating meaningful travel, she is the one who designs your itinerary, selects the clinics, and makes sure every moment of your trip is intentional. She has done these trips herself and knows exactly what makes the difference between a good experience and an unforgettable one.</p>
+          <div class="founder-contact">
+            <span><span class="contact-dot"></span>sophia@luxebeautytrip.com</span>
+            <span><span class="contact-dot"></span>@luxebeautytrip</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="founder-card">
+        <div class="founder-photo">[ Photo of Diana ]</div>
+        <div class="founder-body">
+          <div class="founder-title">Co-Founder, Registered Nurse (RN)</div>
+          <h3>Diana</h3>
+          <p>Diana is a Registered Nurse with clinical expertise in aesthetic procedures. She is the reason you can trust every clinic on our list. Diana personally vets all partner clinics, reviews your health history before any treatment plan is finalised, and is available throughout the trip to answer clinical questions. Her credential is not a detail, it is what makes Luxe Beauty Trip different from any other travel company offering this kind of experience.</p>
+          <div class="founder-contact">
+            <span><span class="contact-dot"></span>diana@luxebeautytrip.com</span>
+            <span><span class="contact-dot"></span>@luxebeautytrip</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 32px; background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 28px 26px;">
+      <div class="section-label" style="margin-bottom: 8px;">Get in Touch</div>
+      <p style="font-size: 0.92rem; font-weight: 300; color: #555; line-height: 1.8; margin-bottom: 16px;">
+        For all planning enquiries, reach us at <strong style="color: var(--navy);">hello@luxebeautytrip.com</strong>. For urgent trip support, use WhatsApp at the number provided in your pre-trip briefing document. Follow us on Instagram at <strong style="color: var(--navy);">@luxebeautytrip</strong> for clinic highlights, client stories, and Seoul guides.
+      </p>
+      <p style="font-size: 0.86rem; font-weight: 300; color: #888; line-height: 1.7;">
+        We are based across Canada and typically respond within 2 business days. During trip season (October to November) response times may extend slightly. We appreciate your patience and will always get back to you.
+      </p>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="guide-footer">
+    <img src="images/logo.png" alt="Luxe Beauty Trip" class="guide-footer-logo">
+    <div class="guide-footer-text">
+      hello@luxebeautytrip.com &nbsp;|&nbsp; <a href="#">@luxebeautytrip</a><br>
+      luxebeautytrip.com
+    </div>
+  </div>
+
+</div><!-- end .doc -->
+
+</body>
+</html>
