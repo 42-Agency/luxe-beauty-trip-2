@@ -1119,3 +1119,89 @@ h1, h2, h3, h4 {
   .founders-teaser-photo { height: 280px; }
   .founders-teaser-text { padding: 40px 20px; }
 }
+
+/* ===== ACCREDITATIONS STRIP ===== */
+.accreditations {
+  padding: 48px 24px;
+  background: #faf8f6;
+  text-align: center;
+  overflow: hidden;
+}
+.accred-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #bbb;
+  margin-bottom: 28px;
+}
+.accred-track {
+  overflow: hidden;
+  width: 100%;
+}
+.accred-logos {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  width: max-content;
+  animation: accred-scroll 22s linear infinite;
+}
+.accred-logos:hover { animation-play-state: paused; }
+.accred-item {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.accred-item img {
+  height: 44px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.55;
+  transition: opacity 0.2s, filter 0.2s;
+}
+.accred-item img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+.accred-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: #999;
+  white-space: nowrap;
+}
+@keyframes accred-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ===== DOWNTIME BADGES ===== */
+.downtime-badge {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: auto;
+  margin-right: 12px;
+}
+.downtime-zero {
+  background: rgba(212,131,122,0.12);
+  color: #c0736b;
+  border: 1px solid rgba(212,131,122,0.3);
+}
+.downtime-mask {
+  background: rgba(201,168,124,0.15);
+  color: #9a7a4a;
+  border: 1px solid rgba(201,168,124,0.35);
+}
+.downtime-recovery {
+  background: rgba(28,58,74,0.08);
+  color: #1C3A4A;
+  border: 1px solid rgba(28,58,74,0.2);
+}
