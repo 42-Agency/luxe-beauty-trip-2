@@ -391,9 +391,42 @@
       text-decoration: none;
     }
 
+    /* TREATMENT MODEL */
+    .treatment-model-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .treatment-model-item {
+      border-left: 2px solid var(--rose);
+      padding-left: 20px;
+    }
+    .treatment-model-item .tm-label {
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--tan);
+      margin-bottom: 8px;
+    }
+    .treatment-model-item h4 {
+      font-size: 14px;
+      color: var(--navy);
+      font-weight: 500;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .treatment-model-item p {
+      font-size: 13px;
+      color: #777;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 768px) {
       .what-grid { grid-template-columns: 1fr; }
+      .treatment-model-grid { grid-template-columns: 1fr; }
       .itinerary-days { grid-template-columns: repeat(2, 1fr); }
       .included-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
@@ -461,6 +494,32 @@
     </div>
   </section>
 
+  <!-- TREATMENT MODEL -->
+  <section class="section" style="background: var(--light);">
+    <div class="section-inner">
+      <p class="section-label">How It Works</p>
+      <h2 class="section-title">Multiple treatments. One day.<br>Back to exploring by lunch.</h2>
+      <p class="section-body">Korean clinics are built differently. In a single morning appointment, you can combine a lifting treatment, skin boosters, and laser toning — sessions that would take weeks of separate visits at home. The vast majority of treatments are non-invasive and carry zero downtime. A handful leave you wanting a face mask for the rest of the day, which in Seoul is perfectly normal and part of the experience. Your entire treatment plan is completed on Day 3, with the rest of the trip completely free.</p>
+      <div class="treatment-model-grid">
+        <div class="treatment-model-item">
+          <p class="tm-label">Stack</p>
+          <h4>2 to 4 treatments in one visit</h4>
+          <p>Lifting, skin boosters, laser toning — all in a single morning. No waiting weeks between appointments like you would at home.</p>
+        </div>
+        <div class="treatment-model-item">
+          <p class="tm-label">Downtime</p>
+          <h4>Most treatments: none at all</h4>
+          <p>The vast majority of Korean aesthetic treatments are non-invasive. Walk out of the clinic, have lunch, and carry on with your day.</p>
+        </div>
+        <div class="treatment-model-item">
+          <p class="tm-label">Timeline</p>
+          <h4>Done in a day. Trip continues</h4>
+          <p>One clinic day is all it takes. The remaining four days are yours to explore Seoul, shop Myeongdong, and enjoy the experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ITINERARY -->
   <section class="itinerary-strip">
     <div class="itinerary-inner">
@@ -480,7 +539,7 @@
         <div class="day-card highlight">
           <p class="day-num">Day 3 — Nov 9</p>
           <h4>Clinic Day</h4>
-          <p>Doctor consultation and your personalised treatment session.</p>
+          <p>Doctor consultation and your personalised non-invasive treatments</p>
         </div>
         <div class="day-card">
           <p class="day-num">Day 4 — Nov 10</p>
