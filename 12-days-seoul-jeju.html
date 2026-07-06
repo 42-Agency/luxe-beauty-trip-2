@@ -351,8 +351,8 @@
         <div class="sidebar-card">
           <p class="sidebar-from">Journey Planning From</p>
           <p class="sidebar-price">$300</p>
-          <a href="index.html#contact" class="btn btn-rose sidebar-btn">Book a Free Consultation</a>
-          <a href="index.html#contact" class="sidebar-secondary-btn">Start with a Free Call</a>
+          <a href="#enquire" class="btn btn-rose sidebar-btn">Enquire About This Trip</a>
+          <a href="index.html#contact" class="sidebar-secondary-btn">Book a Free Call</a>
           <hr class="sidebar-divider">
           <div class="sidebar-trust-item"><span class="sidebar-trust-icon">✦</span>Personalized treatment plan — no surprises</div>
           <div class="sidebar-trust-item"><span class="sidebar-trust-icon">✦</span>Estimated costs shared before you travel</div>
@@ -372,9 +372,87 @@
     </aside>
   </div>
 
+  <!-- ENQUIRY FORM -->
+  <section id="enquire" style="padding: 80px 24px; background: #faf8f6;">
+    <div style="max-width: 640px; margin: 0 auto;">
+      <p style="font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--tan); margin-bottom: 14px; text-align: center;">Custom Trip Enquiry</p>
+      <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--navy); text-align: center; margin-bottom: 12px; line-height: 1.25;">Tell Us About Your Trip</h2>
+      <p style="font-size: 0.92rem; color: #888; text-align: center; line-height: 1.75; margin-bottom: 40px; font-weight: 300;">This journey is fully customised around you. Share your details and we will come back within 48 hours with a personalised outline and next steps. No commitment required.</p>
+      <form class="contact-form" action="https://formspree.io/f/meenwqbw" method="POST" style="background: #fff; border: 1px solid #e8e0dd; border-radius: 16px; padding: 40px;">
+        <input type="hidden" name="_next" value="https://www.luxebeautytrip.com/thankyou.html">
+        <input type="hidden" name="_subject" value="12 Days Seoul & Jeju — Custom Trip Enquiry">
+        <input type="hidden" name="source" value="12 Days Seoul Jeju Page">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="sjFirstName">First Name <span class="req">*</span></label>
+            <input type="text" id="sjFirstName" name="first_name" required>
+          </div>
+          <div class="form-group">
+            <label for="sjLastName">Last Name <span class="req">*</span></label>
+            <input type="text" id="sjLastName" name="last_name" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="sjEmail">Email <span class="req">*</span></label>
+          <input type="email" id="sjEmail" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="sjPhone">Phone Number</label>
+          <input type="tel" id="sjPhone" name="phone" placeholder="+1 (xxx) xxx-xxxx">
+        </div>
+        <div class="form-group">
+          <label for="sjLocation">Where are you based? <span class="req">*</span></label>
+          <input type="text" id="sjLocation" name="location" placeholder="City, Country" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="sjTravellers">Number of Travellers</label>
+            <select id="sjTravellers" name="travellers">
+              <option value="">Select</option>
+              <option value="Solo">Just me</option>
+              <option value="2">2</option>
+              <option value="3-5">3 to 5</option>
+              <option value="6-8">6 to 8</option>
+              <option value="9+">9 or more</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="sjDates">Preferred Travel Window</label>
+            <select id="sjDates" name="travel_dates">
+              <option value="">Select</option>
+              <option value="Jan-Mar 2027">January to March 2027</option>
+              <option value="Apr-Jun 2027">April to June 2027</option>
+              <option value="Jul-Sep 2027">July to September 2027</option>
+              <option value="Oct-Dec 2027">October to December 2027</option>
+              <option value="Flexible">Flexible</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="sjConcerns">What are you hoping to address? <span class="form-hint">Skin, hair, wellness — anything</span></label>
+          <textarea id="sjConcerns" name="concerns" rows="3" placeholder="e.g. anti-aging, pigmentation, hair growth, acne — for myself and/or my travel companions..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="sjSource">Where did you hear about us?</label>
+          <select id="sjSource" name="hear_about_us">
+            <option value="">Select an option</option>
+            <option value="Instagram">Instagram</option>
+            <option value="TikTok">TikTok</option>
+            <option value="Google">Google</option>
+            <option value="Friend / Referral">Friend / Referral</option>
+            <option value="Facebook">Facebook</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-rose" style="width: 100%;">Send Enquiry</button>
+        <p style="font-size: 0.78rem; color: #bbb; text-align: center; margin-top: 16px; line-height: 1.65;">No payment required. We will follow up within 48 hours with a personalised itinerary outline and pricing. A $300 planning fee applies to begin your custom itinerary build.</p>
+      </form>
+    </div>
+  </section>
+
   <section class="itin-cta">
-    <h2>Wondering Which Treatments Are Right for You?</h2>
-    <p>We'll listen to your concerns and suggest the right treatments based on what you tell us — no commitment, just clarity — before you decide on anything.</p>
+    <h2>Not Sure Where to Start?</h2>
+    <p>Book a free 20-minute discovery call and we will answer every question — treatments, costs, logistics, what to expect. No pressure, no commitment.</p>
     <a href="index.html#contact" class="btn btn-rose">Book a Free Consultation</a>
   </section>
 
