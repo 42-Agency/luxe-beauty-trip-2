@@ -52,7 +52,7 @@
         <a href="blog.html">Blog</a>
         <a href="index.html#contact">Contact</a>
       </div>
-      <a href="#enquire" class="btn btn-rose nav-cta">Enquire Now</a>
+      <a href="mailto:info@luxebeautytrip.com" class="btn btn-rose nav-cta">Get in Touch</a>
       <button class="hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span>
       </button>
@@ -64,7 +64,7 @@
       <a href="about.html">About</a>
       <a href="blog.html">Blog</a>
       <a href="index.html#contact">Contact</a>
-      <a href="#enquire" class="btn btn-rose">Enquire Now</a>
+      <a href="mailto:info@luxebeautytrip.com" class="btn btn-rose">Get in Touch</a>
     </div>
   </header>
 
@@ -82,7 +82,6 @@
     <a href="#overview" class="itin-tab active">Overview</a>
     <a href="#itinerary" class="itin-tab">Day by Day</a>
     <a href="#includes" class="itin-tab">What's Included</a>
-    <a href="#enquire" class="itin-tab">Enquire</a>
   </nav>
 
   <div class="itin-body">
@@ -342,84 +341,14 @@
         </div>
       </section>
 
-      <!-- ENQUIRY FORM -->
-      <section class="itin-section" id="enquire">
-        <h2 class="itin-section-heading">Enquire About This Trip</h2>
-        <p class="itin-overview-text">This itinerary is fully customised around your group. Share your details and we will come back within 48 hours with a personalised outline and pricing. No commitment required.</p>
-
-        <div class="gt-form-wrap">
-          <form class="contact-form" action="https://formspree.io/f/meenwqbw" method="POST">
-            <input type="hidden" name="_next" value="https://www.luxebeautytrip.com/thankyou.html">
-            <input type="hidden" name="_subject" value="9 Days Seoul & Jeju — Custom Trip Enquiry">
-            <input type="hidden" name="source" value="9 Days Seoul Jeju Page">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="sjFirstName">First Name <span class="req">*</span></label>
-                <input type="text" id="sjFirstName" name="first_name" required>
-              </div>
-              <div class="form-group">
-                <label for="sjLastName">Last Name <span class="req">*</span></label>
-                <input type="text" id="sjLastName" name="last_name" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="sjEmail">Email <span class="req">*</span></label>
-              <input type="email" id="sjEmail" name="email" required>
-            </div>
-            <div class="form-group">
-              <label for="sjPhone">Phone Number</label>
-              <input type="tel" id="sjPhone" name="phone" placeholder="+1 (xxx) xxx-xxxx">
-            </div>
-            <div class="form-group">
-              <label for="sjLocation">Where are you based? <span class="req">*</span></label>
-              <input type="text" id="sjLocation" name="location" placeholder="City, Country" required>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="sjTravellers">Number of Travellers</label>
-                <select id="sjTravellers" name="travellers">
-                  <option value="">Select</option>
-                  <option value="Solo">Just me</option>
-                  <option value="2">2</option>
-                  <option value="3-5">3 to 5</option>
-                  <option value="6-8">6 to 8</option>
-                  <option value="9+">9 or more</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="sjDates">Preferred Travel Window</label>
-                <select id="sjDates" name="travel_dates">
-                  <option value="">Select</option>
-                  <option value="Jan-Mar 2027">January to March 2027</option>
-                  <option value="Apr-Jun 2027">April to June 2027</option>
-                  <option value="Jul-Sep 2027">July to September 2027</option>
-                  <option value="Oct-Dec 2027">October to December 2027</option>
-                  <option value="Flexible">Flexible</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="sjConcerns">What are you hoping to address? <span class="form-hint">Skin, hair, wellness — anything</span></label>
-              <textarea id="sjConcerns" name="concerns" rows="3" placeholder="e.g. anti-aging, pigmentation, hair growth, acne — for myself and/or my travel companions..."></textarea>
-            </div>
-            <div class="form-group">
-              <label for="sjSource">Where did you hear about us?</label>
-              <select id="sjSource" name="hear_about_us">
-                <option value="">Select an option</option>
-                <option value="Instagram">Instagram</option>
-                <option value="TikTok">TikTok</option>
-                <option value="Google">Google</option>
-                <option value="Friend / Referral">Friend / Referral</option>
-                <option value="Facebook">Facebook</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <button type="submit" class="btn btn-rose" style="width:100%">Send Enquiry</button>
-          </form>
-        </div>
-
-        <p style="font-size:0.8rem; color:#aaa; margin-top:20px; line-height:1.65;">No payment required. We will follow up within 48 hours with a personalised itinerary and pricing. A $300 planning fee applies to begin your custom itinerary build — this is credited towards your final package if you proceed.</p>
-        <p style="font-size:0.88rem; color:#777; margin-top:12px;">Every clinic on this itinerary is personally vetted by Diana, a Registered Nurse.</p>
+      <!-- SHARE -->
+      <section class="itin-section" style="text-align: center; padding-top: 16px;">
+        <p style="font-size: 0.82rem; color: #aaa; margin-bottom: 16px; letter-spacing: 0.06em;">Like this itinerary? Share it with your group.</p>
+        <button id="shareBtn" onclick="shareItinerary()" class="btn btn-rose" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          Share This Itinerary
+        </button>
+        <p id="shareConfirm" style="font-size: 0.8rem; color: var(--rose); margin-top: 12px; opacity: 0; transition: opacity 0.3s;">Link copied to clipboard</p>
       </section>
 
     </main>
@@ -431,8 +360,11 @@
           <p class="sidebar-from">Custom Group Itinerary</p>
           <p class="sidebar-price" style="font-size: 1.6rem;">Tailored Pricing</p>
           <p style="font-size:0.78rem; color:#aaa; margin: 0 0 18px; line-height:1.5;">Based on group size, dates, accommodation, and treatment choices.</p>
-          <a href="#enquire" class="btn btn-rose sidebar-btn">Enquire About This Trip</a>
-          <a href="index.html#contact" class="sidebar-secondary-btn">Book a Free Call First</a>
+          <button onclick="shareItinerary()" class="btn btn-rose sidebar-btn" style="width:100%; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            Share This Itinerary
+          </button>
+          <a href="mailto:info@luxebeautytrip.com" class="sidebar-secondary-btn">Get in Touch</a>
           <hr class="sidebar-divider">
           <div class="sidebar-trust-item"><span class="sidebar-trust-icon">✦</span>9 days — Seoul 5 nights, Jeju 3 nights</div>
           <div class="sidebar-trust-item"><span class="sidebar-trust-icon">✦</span>Non-invasive treatments only</div>
@@ -453,18 +385,23 @@
 
   </div>
 
-  <section class="itin-cta">
-    <h2>Not Sure Where to Start?</h2>
-    <p>Book a free 20-minute discovery call and we will answer every question — treatments, costs, logistics, what to expect. No pressure, no commitment.</p>
-    <a href="index.html#contact" class="btn btn-rose">Book a Free Consultation</a>
-  </section>
-
   <footer class="footer">
     <p>&copy; 2025 Luxe Beauty Trip. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
   <script>
+    async function shareItinerary() {
+      const url = window.location.href;
+      if (navigator.share) {
+        await navigator.share({ title: '9 Days Seoul & Jeju — Luxe Beauty Trip', url });
+      } else {
+        await navigator.clipboard.writeText(url);
+        const msg = document.getElementById('shareConfirm');
+        if (msg) { msg.style.opacity = '1'; setTimeout(() => msg.style.opacity = '0', 2500); }
+      }
+    }
+
     document.querySelectorAll('.day-toggle').forEach(btn => {
       btn.addEventListener('click', () => {
         btn.closest('.day-accordion').classList.toggle('open');
