@@ -477,13 +477,14 @@
 
       <!-- WAITLIST -->
       <section class="itin-section" id="waitlist">
-        <h2 class="itin-section-heading">Free Consultation</h2>
-        <p class="itin-overview-text">Dates dropping soon. Drop your details below and you'll be first to know — and first in line when spots open.</p>
+        <h2 class="itin-section-heading">Join the November 2026 Waitlist</h2>
+        <p class="itin-overview-text">November 7–12, 2026 · Seoul, South Korea · Limited to 12 women. Drop your details below and we'll be in touch within 48 hours.</p>
 
         <div class="gt-form-wrap">
         <form class="contact-form" action="https://formspree.io/f/mjgdqern" method="POST">
           <input type="hidden" name="_next" value="https://www.luxebeautytrip.com/thankyou.html">
-          <input type="hidden" name="_subject" value="Seoul K-Beauty Group Trip Waitlist">
+          <input type="hidden" name="_subject" value="November 2026 Seoul Trip — Waitlist">
+          <input type="hidden" name="source" value="Seoul Group Trip Page — November Waitlist">
           <div class="form-row">
             <div class="form-group">
               <label for="gtFirstName">First Name <span class="req">*</span></label>
@@ -503,12 +504,38 @@
             <input type="tel" id="gtPhone" name="phone" placeholder="+1 (xxx) xxx-xxxx">
           </div>
           <div class="form-group">
-            <label for="gtCountry">Where are you based?</label>
-            <input type="text" id="gtCountry" name="location" placeholder="City, Country">
+            <label for="gtCountry">Where are you based? <span class="req">*</span></label>
+            <input type="text" id="gtCountry" name="location" placeholder="City, Country" required>
           </div>
           <div class="form-group">
-            <label for="gtWhy">What excites you most about this trip? <span class="form-hint">Optional</span></label>
-            <textarea id="gtWhy" name="message" rows="3" placeholder="The treatments, the culture, doing it with a group..."></textarea>
+            <label for="gtDates">Can you make November 7–12, 2026? <span class="req">*</span></label>
+            <select id="gtDates" name="dates_confirmed" required>
+              <option value="">Select an option</option>
+              <option value="Yes, these dates work">Yes, these dates work</option>
+              <option value="Possibly, need to check">Possibly, need to check</option>
+              <option value="No, interested in future dates">No, but I am interested in a future trip</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="gtRoom">Room Preference</label>
+            <select id="gtRoom" name="room_preference">
+              <option value="">Select an option</option>
+              <option value="Twin Share (from $4,150)">Twin Share (from $4,150 USD)</option>
+              <option value="Single Room">Single Room (supplement on request)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="gtKorea">Have you been to Korea before?</label>
+            <select id="gtKorea" name="korea_experience">
+              <option value="">Select an option</option>
+              <option value="No, first time">No, this would be my first time</option>
+              <option value="Yes, once">Yes, I have been once</option>
+              <option value="Yes, multiple times">Yes, I have been multiple times</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="gtSkin">What skin concerns are you hoping to address? <span class="form-hint">Optional</span></label>
+            <textarea id="gtSkin" name="skin_concerns" rows="3" placeholder="e.g. skin laxity, pigmentation, acne scars, overall brightening..."></textarea>
           </div>
           <div class="form-group">
             <label for="gtHearAboutUs">Where did you hear about us?</label>
@@ -522,11 +549,11 @@
               <option value="Other">Other</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-rose" style="width:100%">Book a Free Consultation</button>
+          <button type="submit" class="btn btn-rose" style="width:100%">Join the November Waitlist</button>
         </form>
         </div>
 
-        <p style="font-size:0.8rem; color:#aaa; margin-top:20px; line-height:1.65;">Submitting this form holds your interest only — no payment is taken. We'll be in touch with full itinerary details and next steps. Pricing starts from $3,850 USD* per person (includes 5 nights accommodation) and will be confirmed at time of booking. Flights and clinic treatment fees are separate.</p>
+        <p style="font-size:0.8rem; color:#aaa; margin-top:20px; line-height:1.65;">Submitting this form holds your interest only — no payment is taken. We will be in touch within 48 hours with full details and next steps. Pricing from $4,150 USD per person (includes 5 nights accommodation). Flights and clinic treatment fees are separate.</p>
         <p style="font-size:0.88rem; color:#777; margin-top:12px;">Every clinic on this itinerary has been personally vetted by Diana, a Registered Nurse.</p>
       </section>
 
