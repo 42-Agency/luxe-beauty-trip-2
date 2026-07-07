@@ -1156,12 +1156,10 @@ h1, h2, h3, h4 {
   width: auto;
   max-width: 160px;
   object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.55;
-  transition: opacity 0.2s, filter 0.2s;
+  opacity: 0.85;
+  transition: opacity 0.2s;
 }
 .accred-item img:hover {
-  filter: grayscale(0%);
   opacity: 1;
 }
 .accred-text {
