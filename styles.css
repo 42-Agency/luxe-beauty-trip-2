@@ -1152,9 +1152,9 @@ h1, h2, h3, h4 {
   flex-shrink: 0;
 }
 .accred-item img {
-  height: 44px;
+  height: 88px;
   width: auto;
-  max-width: 160px;
+  max-width: 320px;
   object-fit: contain;
   opacity: 0.85;
   transition: opacity 0.2s;
