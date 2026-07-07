@@ -92,6 +92,25 @@ if (videoClose)    videoClose.addEventListener('click', closeVideoModal);
 if (videoBackdrop) videoBackdrop.addEventListener('click', closeVideoModal);
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeVideoModal(); });
 
+// Drag-to-scroll accreditation track
+const accredTrack = document.querySelector('.accred-track');
+if (accredTrack) {
+  let isDown = false, startX, scrollLeft;
+  accredTrack.addEventListener('mousedown', e => {
+    isDown = true;
+    startX = e.pageX - accredTrack.offsetLeft;
+    scrollLeft = accredTrack.scrollLeft;
+  });
+  accredTrack.addEventListener('mouseleave', () => isDown = false);
+  accredTrack.addEventListener('mouseup', () => isDown = false);
+  accredTrack.addEventListener('mousemove', e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - accredTrack.offsetLeft;
+    accredTrack.scrollLeft = scrollLeft - (x - startX);
+  });
+}
+
 // Shrink header on scroll
 const header = document.getElementById('header');
 if (header) {

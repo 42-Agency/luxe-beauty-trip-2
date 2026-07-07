@@ -1122,10 +1122,9 @@ h1, h2, h3, h4 {
 
 /* ===== ACCREDITATIONS STRIP ===== */
 .accreditations {
-  padding: 48px 24px;
+  padding: 48px 0;
   background: #faf8f6;
   text-align: center;
-  overflow: hidden;
 }
 .accred-label {
   font-size: 0.65rem;
@@ -1135,17 +1134,20 @@ h1, h2, h3, h4 {
   margin-bottom: 28px;
 }
 .accred-track {
-  overflow: hidden;
-  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  cursor: grab;
 }
+.accred-track:active { cursor: grabbing; }
+.accred-track::-webkit-scrollbar { display: none; }
 .accred-logos {
   display: flex;
   align-items: center;
-  gap: 64px;
+  gap: 48px;
   width: max-content;
-  animation: accred-scroll 22s linear infinite;
+  padding: 0 32px;
 }
-.accred-logos:hover { animation-play-state: paused; }
 .accred-item {
   display: flex;
   align-items: center;
@@ -1154,14 +1156,13 @@ h1, h2, h3, h4 {
 .accred-item img {
   height: 88px;
   width: auto;
-  max-width: 320px;
+  max-width: 280px;
   object-fit: contain;
   opacity: 0.85;
   transition: opacity 0.2s;
+  pointer-events: none;
 }
-.accred-item img:hover {
-  opacity: 1;
-}
+.accred-item img:hover { opacity: 1; }
 .accred-text {
   font-family: 'Poppins', sans-serif;
   font-size: 0.9rem;
@@ -1169,10 +1170,6 @@ h1, h2, h3, h4 {
   letter-spacing: 0.06em;
   color: #999;
   white-space: nowrap;
-}
-@keyframes accred-scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
 }
 
 /* ===== DOWNTIME BADGES ===== */
