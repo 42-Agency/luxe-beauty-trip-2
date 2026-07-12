@@ -111,6 +111,32 @@ if (accredTrack) {
   });
 }
 
+// AJAX form submission — bypasses Formspree's intermediate page and redirects directly
+document.querySelectorAll('form[action*="formspree.io"]').forEach(form => {
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = form.querySelector('[type="submit"]');
+    const originalText = btn ? btn.textContent : '';
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        window.location.href = 'https://www.luxebeautytrip.com/thankyou.html';
+      } else {
+        if (btn) { btn.disabled = false; btn.textContent = originalText; }
+        alert('Something went wrong. Please try again or email us at info@luxebeautytrip.com');
+      }
+    } catch {
+      if (btn) { btn.disabled = false; btn.textContent = originalText; }
+      alert('Something went wrong. Please try again or email us at info@luxebeautytrip.com');
+    }
+  });
+});
+
 // Shrink header on scroll
 const header = document.getElementById('header');
 if (header) {
