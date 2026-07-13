@@ -132,7 +132,9 @@
       const lastName = nameParts.slice(1).join(' ') || '';
 
       let url = 'https://calendly.com/luxebeautytrip/20min?hide_gdpr_banner=1&timezone=America%2FLos_Angeles';
-      if (name) url += '&name=' + encodeURIComponent(name);
+      if (firstName) url += '&first_name=' + encodeURIComponent(firstName);
+      if (lastName) url += '&last_name=' + encodeURIComponent(lastName);
+      if (!lastName && firstName) url += '&last_name=';
       if (email) url += '&email=' + encodeURIComponent(email);
 
       function initCalendly() {
