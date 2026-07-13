@@ -14,71 +14,70 @@
   <title>Thank You — Luxe Beauty Trip</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="styles.css">
   <style>
-    .thankyou-header {
+    body { background: #fdf9f8; }
+    .ty-logo-wrap {
       text-align: center;
-      padding: 60px 24px 40px;
-      background: #fdf9f8;
+      padding: 48px 24px 32px;
     }
-    .thankyou-logo {
+    .ty-logo {
       height: 52px;
       width: auto;
-      margin-bottom: 40px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
     }
-    .thankyou-icon {
-      width: 64px;
-      height: 64px;
+    .ty-icon {
+      width: 56px;
+      height: 56px;
       background: rgba(212,131,122,0.15);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 28px;
-      font-size: 1.6rem;
-    }
-    .thankyou-header h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.4rem;
-      font-style: italic;
-      color: var(--navy);
-      margin-bottom: 16px;
-      line-height: 1.2;
-    }
-    .thankyou-header p {
-      font-family: 'Lato', sans-serif;
-      font-size: 1rem;
-      color: #666;
-      line-height: 1.75;
-      max-width: 480px;
-      margin: 0 auto 12px;
+      margin: 0 auto 24px;
+      font-size: 1.4rem;
     }
     .calendly-section {
       background: #fff;
-      padding: 0 24px 60px;
+      padding: 0 24px 48px;
     }
     .calendly-label {
       text-align: center;
-      font-family: 'Lato', sans-serif;
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #aaa;
-      margin-bottom: 24px;
-      padding-top: 40px;
+      color: #bbb;
+      padding-top: 36px;
+      margin-bottom: 8px;
     }
-    .thankyou-links {
+    .ty-text {
+      text-align: center;
+      padding: 48px 24px 16px;
+    }
+    .ty-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-style: italic;
+      color: var(--navy);
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+    .ty-text p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      color: #888;
+      line-height: 1.8;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .ty-links {
       display: flex;
-      gap: 16px;
+      gap: 14px;
       justify-content: center;
       flex-wrap: wrap;
       padding: 32px 24px 60px;
-      background: #fdf9f8;
     }
   </style>
   <!-- Meta Pixel Code -->
@@ -101,19 +100,23 @@
   <!-- End Meta Pixel Code -->
 </head>
 <body>
-  <div class="thankyou-header">
-    <img src="images/logo.png" alt="Luxe Beauty Trip" class="thankyou-logo">
-    <div class="thankyou-icon">✦</div>
-    <h1>We'll be in touch soon.</h1>
-    <p>Thank you for reaching out. In the meantime, book a free 20-minute discovery call and let us start planning your Seoul experience.</p>
+
+  <div class="ty-logo-wrap">
+    <img src="images/logo.png" alt="Luxe Beauty Trip" class="ty-logo">
+    <div class="ty-icon">✦</div>
   </div>
 
   <div class="calendly-section">
-    <p class="calendly-label">Book your free discovery call</p>
+    <p class="calendly-label">Book your free 20-minute discovery call</p>
     <div id="calendly-embed"></div>
   </div>
 
-  <div class="thankyou-links">
+  <div class="ty-text">
+    <h1>We'll be in touch soon.</h1>
+    <p>Thank you for reaching out. We've received your details and will be in touch as soon as possible to schedule your free discovery call.</p>
+  </div>
+
+  <div class="ty-links">
     <a href="index.html" class="btn btn-rose">Back to Home</a>
     <a href="blog.html" class="btn" style="background:#f5efeb; color:var(--navy);">Read the Blog</a>
   </div>
@@ -128,7 +131,7 @@
       if (name) url += '&name=' + encodeURIComponent(name);
       if (email) url += '&email=' + encodeURIComponent(email);
 
-      window.addEventListener('load', function () {
+      function initCalendly() {
         if (window.Calendly) {
           Calendly.initInlineWidget({
             url: url,
@@ -136,11 +139,16 @@
             prefill: { name: name, email: email },
           });
         } else {
-          // Fallback: plain iframe if widget script hasn't loaded
-          const el = document.getElementById('calendly-embed');
-          el.innerHTML = '<iframe src="' + url + '" width="100%" height="700" frameborder="0"></iframe>';
+          document.getElementById('calendly-embed').innerHTML =
+            '<iframe src="' + url + '" width="100%" height="700" frameborder="0"></iframe>';
         }
-      });
+      }
+
+      if (document.readyState === 'complete') {
+        initCalendly();
+      } else {
+        window.addEventListener('load', initCalendly);
+      }
     })();
   </script>
 </body>
