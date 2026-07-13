@@ -14,24 +14,22 @@
   <title>Thank You — Luxe Beauty Trip</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="styles.css">
   <style>
-    .thankyou-wrap {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+    .thankyou-header {
       text-align: center;
-      padding: 60px 24px;
+      padding: 60px 24px 40px;
       background: #fdf9f8;
     }
     .thankyou-logo {
       height: 52px;
       width: auto;
       margin-bottom: 40px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
     .thankyou-icon {
       width: 64px;
@@ -44,27 +42,43 @@
       margin: 0 auto 28px;
       font-size: 1.6rem;
     }
-    .thankyou-wrap h1 {
-      font-family: 'Playfair Display', serif;
+    .thankyou-header h1 {
+      font-family: 'Cormorant Garamond', serif;
       font-size: 2.4rem;
       font-style: italic;
       color: var(--navy);
       margin-bottom: 16px;
       line-height: 1.2;
     }
-    .thankyou-wrap p {
-      font-family: 'Poppins', sans-serif;
+    .thankyou-header p {
+      font-family: 'Lato', sans-serif;
       font-size: 1rem;
       color: #666;
       line-height: 1.75;
-      max-width: 440px;
-      margin: 0 auto 36px;
+      max-width: 480px;
+      margin: 0 auto 12px;
+    }
+    .calendly-section {
+      background: #fff;
+      padding: 0 24px 60px;
+    }
+    .calendly-label {
+      text-align: center;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 24px;
+      padding-top: 40px;
     }
     .thankyou-links {
       display: flex;
       gap: 16px;
       justify-content: center;
       flex-wrap: wrap;
+      padding: 32px 24px 60px;
+      background: #fdf9f8;
     }
   </style>
   <!-- Meta Pixel Code -->
@@ -87,15 +101,47 @@
   <!-- End Meta Pixel Code -->
 </head>
 <body>
-  <div class="thankyou-wrap">
+  <div class="thankyou-header">
     <img src="images/logo.png" alt="Luxe Beauty Trip" class="thankyou-logo">
     <div class="thankyou-icon">✦</div>
     <h1>We'll be in touch soon.</h1>
-    <p>Thank you for reaching out. We've received your details and will be in touch as soon as possible to schedule your free discovery call.</p>
-    <div class="thankyou-links">
-      <a href="index.html" class="btn btn-rose">Back to Home</a>
-      <a href="blog.html" class="btn" style="background:#f5efeb; color:var(--navy);">Read the Blog</a>
-    </div>
+    <p>Thank you for reaching out. In the meantime, book a free 20-minute discovery call and let us start planning your Seoul experience.</p>
   </div>
+
+  <div class="calendly-section">
+    <p class="calendly-label">Book your free discovery call</p>
+    <div id="calendly-embed"></div>
+  </div>
+
+  <div class="thankyou-links">
+    <a href="index.html" class="btn btn-rose">Back to Home</a>
+    <a href="blog.html" class="btn" style="background:#f5efeb; color:var(--navy);">Read the Blog</a>
+  </div>
+
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const name = params.get('name') || '';
+      const email = params.get('email') || '';
+      let url = 'https://calendly.com/luxebeautytrip/20min?hide_gdpr_banner=1';
+      if (name) url += '&name=' + encodeURIComponent(name);
+      if (email) url += '&email=' + encodeURIComponent(email);
+
+      window.addEventListener('load', function () {
+        if (window.Calendly) {
+          Calendly.initInlineWidget({
+            url: url,
+            parentElement: document.getElementById('calendly-embed'),
+            prefill: { name: name, email: email },
+          });
+        } else {
+          // Fallback: plain iframe if widget script hasn't loaded
+          const el = document.getElementById('calendly-embed');
+          el.innerHTML = '<iframe src="' + url + '" width="100%" height="700" frameborder="0"></iframe>';
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

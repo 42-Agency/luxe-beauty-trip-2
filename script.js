@@ -141,7 +141,9 @@ document.querySelectorAll('form[action*="formspree.io"]').forEach(form => {
           }),
         }).catch(() => {});
 
-        window.location.href = 'https://www.luxebeautytrip.com/thankyou.html';
+        const name = encodeURIComponent(formData.get('name') || '');
+        const email = encodeURIComponent(formData.get('email') || '');
+        window.location.href = `https://www.luxebeautytrip.com/thankyou.html?name=${name}&email=${email}`;
       } else {
         if (btn) { btn.disabled = false; btn.textContent = originalText; }
         alert('Something went wrong. Please try again or email us at info@luxebeautytrip.com');
