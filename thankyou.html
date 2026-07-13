@@ -127,6 +127,10 @@
       const params = new URLSearchParams(window.location.search);
       const name = params.get('name') || '';
       const email = params.get('email') || '';
+      const nameParts = name.trim().split(' ');
+      const firstName = nameParts[0] || '';
+      const lastName = nameParts.slice(1).join(' ') || '';
+
       let url = 'https://calendly.com/luxebeautytrip/20min?hide_gdpr_banner=1&timezone=America%2FLos_Angeles';
       if (name) url += '&name=' + encodeURIComponent(name);
       if (email) url += '&email=' + encodeURIComponent(email);
@@ -136,7 +140,7 @@
           Calendly.initInlineWidget({
             url: url,
             parentElement: document.getElementById('calendly-embed'),
-            prefill: { name: name, email: email },
+            prefill: { name: name, firstName: firstName, lastName: lastName, email: email },
           });
         } else {
           document.getElementById('calendly-embed').innerHTML =
