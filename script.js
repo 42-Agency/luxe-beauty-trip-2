@@ -135,15 +135,17 @@ document.querySelectorAll('form[action*="formspree.io"]').forEach(form => {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             email: formData.get('email'),
-            name: formData.get('name'),
+            name: [formData.get('first_name') || formData.get('name') || '', formData.get('last_name') || ''].filter(Boolean).join(' '),
             marketing_consent: formData.get('marketing_consent') || '',
             source: formData.get('source') || '',
           }),
         }).catch(() => {});
 
-        const name = encodeURIComponent(formData.get('name') || '');
+        const firstName = formData.get('first_name') || formData.get('name') || '';
+        const lastName = formData.get('last_name') || '';
+        const fullName = encodeURIComponent([firstName, lastName].filter(Boolean).join(' '));
         const email = encodeURIComponent(formData.get('email') || '');
-        window.location.href = `https://www.luxebeautytrip.com/thankyou.html?name=${name}&email=${email}`;
+        window.location.href = `https://www.luxebeautytrip.com/thankyou.html?name=${fullName}&email=${email}`;
       } else {
         if (btn) { btn.disabled = false; btn.textContent = originalText; }
         alert('Something went wrong. Please try again or email us at info@luxebeautytrip.com');
