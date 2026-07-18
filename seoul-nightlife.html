@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2HNHFS0RXL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2HNHFS0RXL');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seoul Nightlife Guide — Clubs, K-Pop & Going Out | Luxe Beauty Trip</title>
+  <meta name="description" content="The honest guide to Seoul's nightlife for bachelorette groups. Gangnam vs Hongdae, club recommendations, what to wear, how to get in, and what to expect as a visitor.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="itinerary.css">
+  <style>
+    .nl-hero {
+      background: #072331;
+      padding: 100px 24px 72px;
+      text-align: center;
+    }
+    .nl-hero-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--rose, #ff8979);
+      margin-bottom: 18px;
+    }
+    .nl-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      color: #fff;
+      line-height: 1.2;
+      margin: 0 auto 20px;
+      max-width: 680px;
+    }
+    .nl-hero p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.8;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    @media (max-width: 600px) {
+      .nl-hero { padding: 80px 20px 56px; }
+      .nl-hero h1 { font-size: 1.8rem; }
+    }
+
+    .nl-body {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    .nl-section {
+      margin-bottom: 56px;
+    }
+    .nl-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--navy, #072331);
+      margin-bottom: 16px;
+    }
+    .nl-section p {
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+    .nl-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .nl-divider {
+      border: none;
+      border-top: 1px solid #ece8e6;
+      margin: 48px 0;
+    }
+
+    /* Neighborhood grid */
+    .nl-hood-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 28px 0;
+    }
+    .nl-hood-card {
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+      min-height: 220px;
+      display: flex;
+      align-items: flex-end;
+    }
+    .nl-hood-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .nl-hood-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(7,35,49,0.92) 40%, rgba(7,35,49,0.2) 100%);
+    }
+    .nl-hood-card-body {
+      position: relative;
+      padding: 20px 18px;
+    }
+    .nl-hood-card-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+    .nl-hood-card-body p {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.55;
+      margin: 0;
+    }
+    .nl-hood-tag {
+      display: inline-block;
+      background: rgba(255,137,121,0.25);
+      border: 1px solid rgba(255,137,121,0.5);
+      color: #ffb5a7;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 20px;
+      padding: 3px 10px;
+      margin-bottom: 8px;
+    }
+
+    /* Venue cards */
+    .nl-venue-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 24px 0;
+    }
+    .nl-venue-card {
+      background: #fdf9f8;
+      border: 1px solid #ece8e6;
+      border-radius: 12px;
+      padding: 20px 22px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .nl-venue-badge {
+      background: var(--navy, #072331);
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-style: italic;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .nl-venue-info h4 {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--navy, #072331);
+      margin-bottom: 4px;
+    }
+    .nl-venue-info .nl-venue-meta {
+      font-size: 0.72rem;
+      color: var(--rose, #ff8979);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    .nl-venue-info p {
+      font-size: 0.83rem;
+      color: #666;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* Practical tips */
+    .nl-tip-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 24px 0;
+    }
+    .nl-tip-card {
+      background: #fdf9f8;
+      border: 1px solid #ece8e6;
+      border-radius: 10px;
+      padding: 18px 18px;
+    }
+    .nl-tip-card h4 {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 8px;
+    }
+    .nl-tip-card p {
+      font-size: 0.84rem;
+      color: #555;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* Bachelorette callout */
+    .nl-bachelorette-callout {
+      background: #072331;
+      border-radius: 16px;
+      padding: 36px 36px;
+      margin: 48px 0;
+      text-align: center;
+    }
+    .nl-bachelorette-callout h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .nl-bachelorette-callout p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.75;
+      max-width: 480px;
+      margin: 0 auto 24px;
+    }
+
+    .nl-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.83rem;
+      color: var(--rose, #ff8979);
+      text-decoration: none;
+      margin-bottom: 48px;
+    }
+    .nl-back-link:hover { opacity: 0.75; }
+
+    @media (max-width: 640px) {
+      .nl-hood-grid { grid-template-columns: 1fr; }
+      .nl-tip-grid { grid-template-columns: 1fr; }
+      .nl-bachelorette-callout { padding: 28px 20px; }
+    }
+  </style>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1534236258236582');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1534236258236582&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+<body>
+
+  <header class="header" id="header">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Luxe Beauty Trip" class="logo-img">
+      </a>
+      <div class="nav-links">
+        <a href="experiences.html">K- Experiences</a>
+        <a href="attractions.html">South Korea Attractions</a>
+        <a href="treatments.html">K- Beauty Treatments</a>
+        <a href="blog.html">Blog</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <a href="bridal-beauty-trip.html#plan" class="btn btn-rose nav-cta">Plan Your Bridal Trip</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="experiences.html">K- Experiences</a>
+      <a href="attractions.html">South Korea Attractions</a>
+      <a href="treatments.html">K- Beauty Treatments</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="bridal-beauty-trip.html#plan" class="btn btn-rose">Plan Your Bridal Trip</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <div class="nl-hero">
+    <p class="nl-hero-label">Seoul Nightlife Guide</p>
+    <h1>Seoul Goes Out Differently.<br>Here Is What to Expect.</h1>
+    <p>The honest guide to Seoul's club scene, K-pop experiences, and how to plan a night (or several) your group will not stop talking about.</p>
+  </div>
+
+  <div class="nl-body">
+
+    <a href="bridal-beauty-trip.html" class="nl-back-link">← Back to Bridal Beauty Trip</a>
+
+    <!-- INTRO -->
+    <div class="nl-section">
+      <h2>Seoul Is a Legitimately World-Class Nightlife City</h2>
+      <p>Most people who visit Seoul for the beauty clinics are genuinely surprised by the nightlife. They expected a quiet, work-focused city and found one of the most vibrant going-out cultures in Asia. Seoul's clubs attract international DJs year-round. The bars in Hongdae operate until 6am on weekends. There are no last-call laws. And the city is extraordinarily safe at 3am in a way that North American cities simply are not.</p>
+      <p>For a bachelorette group, Seoul is a different kind of send-off: one night at a proper Gangnam club, one night of norebang until your voices give out, one evening of street food on the Han River with a bottle of something cold. The variety is what makes it work for every kind of group — whether you want to dance until sunrise or just enjoy the energy of the city after dark.</p>
+    </div>
+
+    <hr class="nl-divider">
+
+    <!-- NEIGHBORHOODS -->
+    <div class="nl-section">
+      <h2>The Neighbourhoods: Know Where You Are Going</h2>
+      <p>Seoul's nightlife is not concentrated in one place. Each neighbourhood has a completely different energy. Getting this right makes a significant difference to the kind of night your group has.</p>
+
+      <div class="nl-hood-grid">
+        <div class="nl-hood-card">
+          <img src="images/namsan-seoul.jpg" alt="Gangnam Seoul nightlife">
+          <div class="nl-hood-card-overlay"></div>
+          <div class="nl-hood-card-body">
+            <div class="nl-hood-tag">World-class clubs</div>
+            <h3>Gangnam</h3>
+            <p>High production venues, international DJs, bottle service, and a dressed-up crowd. This is where Seoul's club scene competes globally.</p>
+          </div>
+        </div>
+        <div class="nl-hood-card">
+          <img src="images/garosu-gil.jpg" alt="Hongdae Seoul nightlife">
+          <div class="nl-hood-card-overlay"></div>
+          <div class="nl-hood-card-body">
+            <div class="nl-hood-tag">Bars, indie clubs, energy</div>
+            <h3>Hongdae</h3>
+            <p>University district with the most electric street atmosphere in Seoul. Live busking, craft cocktail bars, underground clubs, and crowds that peak at 2am.</p>
+          </div>
+        </div>
+        <div class="nl-hood-card">
+          <img src="images/sinsa-dong.jpeg" alt="Sinsa Seoul bars">
+          <div class="nl-hood-card-overlay"></div>
+          <div class="nl-hood-card-body">
+            <div class="nl-hood-tag">Cocktails, rooftops</div>
+            <h3>Sinsa / Garosu-gil</h3>
+            <p>More relaxed and upscale. Great cocktail bars, terraces, and restaurants that turn into late-night venues. Ideal for the evening before a big club night.</p>
+          </div>
+        </div>
+        <div class="nl-hood-card">
+          <img src="images/insadong.jpg" alt="Itaewon Seoul bars">
+          <div class="nl-hood-card-overlay"></div>
+          <div class="nl-hood-card-body">
+            <div class="nl-hood-tag">Underground, late nights</div>
+            <h3>Itaewon</h3>
+            <p>Historically the international district. Now more local-facing with underground electronic clubs and bars that go genuinely late. The techno crowd ends up here.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="nl-divider">
+
+    <!-- CLUBS -->
+    <div class="nl-section">
+      <h2>Where to Go: Our Picks for Bachelorette Groups</h2>
+      <p>Seoul has hundreds of clubs. Most are forgettable. These are the ones that consistently deliver for a group who wants a proper night out — whether you are after a world-class production or something more intimate.</p>
+
+      <h3 style="font-size:0.85rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:#aaa; margin: 28px 0 14px;">Gangnam — For a Big Night</h3>
+      <div class="nl-venue-list">
+        <div class="nl-venue-card">
+          <div class="nl-venue-badge">O</div>
+          <div class="nl-venue-info">
+            <h4>Club Octagon</h4>
+            <div class="nl-venue-meta">Gangnam &nbsp;·&nbsp; Ranked #1 in Asia</div>
+            <p>Consistently ranked among the world's top clubs and the best in Asia. Four floors, multiple rooms, international DJ bookings every weekend, and a production level that rivals anywhere in Ibiza or Berlin. The main floor alone holds thousands. Dress code is enforced on the door — smart, polished. This is the one to book for a bride who wants to do it properly.</p>
+          </div>
+        </div>
+        <div class="nl-venue-card">
+          <div class="nl-venue-badge">A</div>
+          <div class="nl-venue-info">
+            <h4>Club Arena</h4>
+            <div class="nl-venue-meta">Gangnam &nbsp;·&nbsp; Massive scale</div>
+            <p>One of the largest clubs in Asia by capacity. Multiple themed rooms, each with its own DJ and music genre, so the group can split and reunite through the night. Known for exceptional New Year's events and major DJ bookings. The scale is genuinely surprising if you have not been before.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="font-size:0.85rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:#aaa; margin: 28px 0 14px;">Hongdae — For Energy and Variety</h3>
+      <div class="nl-venue-list">
+        <div class="nl-venue-card">
+          <div class="nl-venue-badge">C</div>
+          <div class="nl-venue-info">
+            <h4>Cakeshop</h4>
+            <div class="nl-venue-meta">Hongdae &nbsp;·&nbsp; Underground electronic</div>
+            <p>A cult institution with serious music credentials. Underground venue, minimal production, serious crowd, and a booking policy that consistently draws international electronic acts. Not for everyone, but for a group who wants to feel like they found something real rather than something obvious, this is it.</p>
+          </div>
+        </div>
+        <div class="nl-venue-card">
+          <div class="nl-venue-badge">F</div>
+          <div class="nl-venue-info">
+            <h4>FF (Club FF)</h4>
+            <div class="nl-venue-meta">Hongdae &nbsp;·&nbsp; Multi-genre, accessible</div>
+            <p>One of Hongdae's most popular and accessible clubs. Multiple floors, a mix of hip-hop, R&amp;B, and pop alongside electronic, and a crowd that is genuinely mixed and welcoming to international visitors. A good fit for a bachelorette group where tastes in music vary.</p>
+          </div>
+        </div>
+        <div class="nl-venue-card">
+          <div class="nl-venue-badge">V</div>
+          <div class="nl-venue-info">
+            <h4>Venue</h4>
+            <div class="nl-venue-meta">Hongdae &nbsp;·&nbsp; Live music and club</div>
+            <p>Starts as a live music venue and shifts into a club as the night progresses. Great for a group that wants to ease into the evening before committing to a full club experience. The atmosphere is warm and the crowd tends to be creatively inclined.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="font-size:0.85rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:#aaa; margin: 28px 0 14px;">Itaewon — For Late Nights</h3>
+      <div class="nl-venue-list">
+        <div class="nl-venue-card">
+          <div class="nl-venue-badge">S</div>
+          <div class="nl-venue-info">
+            <h4>Soap</h4>
+            <div class="nl-venue-meta">Itaewon &nbsp;·&nbsp; Techno</div>
+            <p>Seoul's most respected techno destination. Warehouse atmosphere, serious sound system, and a crowd that takes the music seriously. Not for everyone, but if the group has a techno contingent, this is the correct answer.</p>
+          </div>
+        </div>
+        <div class="nl-venue-card">
+          <div class="nl-venue-badge">An</div>
+          <div class="nl-venue-info">
+            <h4>Answer</h4>
+            <div class="nl-venue-meta">Itaewon &nbsp;·&nbsp; Multi-genre, late late nights</div>
+            <p>Known for going genuinely late — still full at 6 or 7am. Multiple rooms, eclectic programming, and a crowd that is international and welcoming. Good choice if your group's energy outlasts everything else.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="nl-divider">
+
+    <!-- K-POP EXPERIENCES -->
+    <div class="nl-section">
+      <h2>K-Pop Beyond the Music</h2>
+      <p>Seoul's K-pop culture is something you experience rather than just observe. The dance classes, the idol photo studios, and the live show recordings are all completely different from anything available anywhere else.</p>
+
+      <div class="nl-venue-list">
+        <div class="nl-venue-card">
+          <div class="nl-venue-badge" style="font-size:1.1rem; font-style:normal;">💃</div>
+          <div class="nl-venue-info">
+            <h4>K-Pop Dance Class</h4>
+            <div class="nl-venue-meta">Hongdae &nbsp;·&nbsp; Group experience</div>
+            <p>Learn the full choreography of an iconic K-pop track with a professional instructor. Available for all levels — you do not need any dance background. Pick your song as a group before arriving, learn every move, and walk out with a video of the performance. One of the most fun things you can do in Seoul with a group of women.</p>
+          </div>
+        </div>
+        <div class="nl-venue-card">
+          <div class="nl-venue-badge" style="font-size:1.1rem; font-style:normal;">📸</div>
+          <div class="nl-venue-info">
+            <h4>Idol Photo Studio</h4>
+            <div class="nl-venue-meta">Hongdae / Gangnam &nbsp;·&nbsp; Group photo experience</div>
+            <p>Professional studio setups designed to produce K-pop idol aesthetic photos. Think dramatic lighting, styled backdrops, wardrobe props, and the kind of retouched results that look nothing like a tourist snapshot. Currently one of the most popular experiences in Seoul — locals book these as regularly as visitors do.</p>
+          </div>
+        </div>
+        <div class="nl-venue-card">
+          <div class="nl-venue-badge" style="font-size:1.1rem; font-style:normal;">🎤</div>
+          <div class="nl-venue-info">
+            <h4>Private Norebang</h4>
+            <div class="nl-venue-meta">Everywhere &nbsp;·&nbsp; Non-negotiable</div>
+            <p>Private karaoke room with your own sound system, tambourines, food and drinks delivered to the door, and no strangers. The rooms range from basic to extraordinarily well-equipped. You book by the hour. Prices are low. The experience is consistently the highlight of every bachelorette group that visits Seoul. Go late. Go long. Take the tambourine seriously.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="nl-divider">
+
+    <!-- PRACTICAL GUIDE -->
+    <div class="nl-section">
+      <h2>The Practical Guide</h2>
+      <p>Seoul nightlife operates differently from North American cities. Knowing a few basics means your night runs smoothly from start to finish.</p>
+
+      <div class="nl-tip-grid">
+        <div class="nl-tip-card">
+          <h4>When to Go</h4>
+          <p>Clubs open around 11pm and peak between 1am and 4am. Arriving before midnight means you will often walk straight in. Arriving after 2am in Hongdae means queueing. Plan accordingly.</p>
+        </div>
+        <div class="nl-tip-card">
+          <h4>What to Wear</h4>
+          <p>Gangnam clubs have a stricter door: dress polished and avoid athletic wear or overly casual outfits. Hongdae is considerably more relaxed and stylish-casual is fine. Both reward effort.</p>
+        </div>
+        <div class="nl-tip-card">
+          <h4>Getting In</h4>
+          <p>Cover charge is typically 10,000 to 20,000 KRW per person (roughly $8 to $15 USD) and usually includes a drink. For larger bachelorette groups, we can arrange table reservations and bottle service at the major Gangnam venues.</p>
+        </div>
+        <div class="nl-tip-card">
+          <h4>Drinking Culture</h4>
+          <p>Korea has no open container laws. You can carry drinks outside and eat street food between bars. Convenience stores sell cold beer and soju at any hour. The Han River is a perfectly acceptable place to drink.</p>
+        </div>
+        <div class="nl-tip-card">
+          <h4>Getting Home</h4>
+          <p>Kakao T is Korea's equivalent of Uber — reliable, safe, and available at all hours. Taxis are inexpensive and plentiful. The subway reopens at 5:30am if you want to time it. Walking in Seoul late at night is genuinely safe.</p>
+        </div>
+        <div class="nl-tip-card">
+          <h4>Safety</h4>
+          <p>Seoul is one of the safest large cities in the world. Solo women walking home at 3am is normal and unremarkable. That said, the same common sense applies everywhere: keep your group together in a new city and look after each other.</p>
+        </div>
+        <div class="nl-tip-card">
+          <h4>Language</h4>
+          <p>Most clubs in Gangnam and Hongdae have English-speaking staff at the door and bar. Kakao T works without speaking Korean. Google Translate's camera function handles any menus or signs you can not read.</p>
+        </div>
+        <div class="nl-tip-card">
+          <h4>Spending</h4>
+          <p>Seoul is significantly more affordable than comparable nightlife in Los Angeles, New York, or Toronto. Bottle service at a world-ranked club costs a fraction of what the equivalent would at home. Budget accordingly and expect to be surprised.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BACHELORETTE CALLOUT -->
+    <div class="nl-bachelorette-callout">
+      <h3>Planning a Bridal Trip to Seoul?</h3>
+      <p>We build the entire experience around your group: clinic day for your skin, nights out for everyone. World-class treatments and a city that genuinely delivers after dark.</p>
+      <a href="bridal-beauty-trip.html" class="btn btn-rose">See the Full Bridal Trip</a>
+    </div>
+
+  </div>
+
+  <section class="itin-cta">
+    <h2>Questions About Going Out in Seoul?</h2>
+    <p>We have been there. We know the venues, the neighbourhoods, and how to make a bachelorette night in Seoul genuinely unforgettable. Ask us anything.</p>
+    <a href="bridal-beauty-trip.html#plan" class="btn btn-rose">Get in Touch</a>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Luxe Beauty Trip. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
