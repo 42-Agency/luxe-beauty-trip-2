@@ -240,11 +240,50 @@
       margin-top: 8px;
     }
 
+    .bridal-fun-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+    .bridal-fun-card {
+      background: #fdf9f8;
+      border: 1px solid #ece8e6;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .bridal-fun-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .bridal-fun-icon {
+      font-size: 2rem;
+      padding: 24px 20px 0;
+    }
+    .bridal-fun-body {
+      padding: 16px 20px 20px;
+    }
+    .bridal-fun-body h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 7px;
+    }
+    .bridal-fun-body p {
+      font-size: 0.83rem;
+      color: #666;
+      line-height: 1.65;
+      margin: 0;
+    }
+
     @media (max-width: 768px) {
       .gt-who-grid { grid-template-columns: 1fr; }
       .gt-incl-grid { grid-template-columns: 1fr; gap: 20px; }
       .gt-pricing-items { grid-template-columns: 1fr; gap: 16px; }
       .bridal-timeline { grid-template-columns: 1fr; }
+      .bridal-fun-grid { grid-template-columns: 1fr; }
       .gt-form-wrap { padding: 24px 20px; }
     }
   </style>
@@ -403,17 +442,18 @@
         <div class="day-accordion">
           <button class="day-toggle">
             <span class="day-pill">Day 2</span>
-            <span class="day-toggle-title">Seoul Sightseeing &amp; Traditional Korean Dinner</span>
+            <span class="day-toggle-title">Seoul Sightseeing, Dinner &amp; Norebang Night</span>
             <span class="day-toggle-loc">Seoul</span>
             <span class="day-arrow">▾</span>
           </button>
           <div class="day-body">
             <img src="images/gyeongbokgung.jpg" alt="Gyeongbokgung Palace Seoul" class="day-img">
-            <p>A full day exploring the best of Seoul together: Gyeongbokgung Palace, the narrow lanes of Bukchon Hanok Village, Insadong's art market, and the city views from Namsan Tower. End with a group hansik dinner — traditional Korean cuisine done properly, the kind of meal you will want to recreate when you get home.</p>
+            <p>A full day exploring the best of Seoul together: Gyeongbokgung Palace, the narrow lanes of Bukchon Hanok Village, Insadong's art market, and the city views from Namsan Tower. Dinner at a traditional hansik restaurant — Korean cuisine done properly. Then the night is yours: head to a private norebang (karaoke room) for the bride's first official send-off as a future Mrs. Your own room, your own mic, unlimited song time. It is a completely different experience from anything at home and genuinely one of the best nights of the trip.</p>
             <div class="day-tags">
               <span class="tag tag-culture">Gyeongbokgung Palace</span>
               <span class="tag tag-culture">Bukchon Hanok Village</span>
               <span class="tag tag-culture">Traditional Korean Dinner</span>
+              <span class="tag tag-beauty">Norebang Night</span>
             </div>
           </div>
         </div>
@@ -439,19 +479,19 @@
         <div class="day-accordion">
           <button class="day-toggle">
             <span class="day-pill">Day 4</span>
-            <span class="day-toggle-title">Jjimjilbang &amp; Free Day</span>
+            <span class="day-toggle-title">Jjimjilbang, K-Pop Dance Class &amp; Hongdae Night Out</span>
             <span class="day-toggle-loc">Seoul</span>
             <span class="day-arrow">▾</span>
           </button>
           <div class="day-body">
-            <img src="images/wellness.png" alt="Korean jjimjilbang spa experience" class="day-img">
-            <p>A morning at a traditional jjimjilbang — the full Korean bathhouse ritual, a completely different experience from anything at home. Saunas, scrubs, mineral pools, and the kind of deep rest your skin needs after clinic day. The afternoon is free: Garosu-gil, Apgujeong, Shinsegae, or whatever is left on your list.</p>
+            <img src="images/kpop-studio.webp" alt="K-pop experience Seoul" class="day-img">
+            <p>A morning at a traditional jjimjilbang — saunas, scrubs, mineral pools, and the kind of deep rest your skin needs after clinic day. In the afternoon, a private K-pop dance class in Hongdae: pick your song, learn the choreography from a professional instructor, and walk out feeling like an idol. The evening belongs to Hongdae — Seoul's most electric neighbourhood for bars, live music, and dancing. Street performances until late, intimate clubs, and cocktail bars where the night genuinely has no fixed end time.</p>
             <div class="day-tags">
               <span class="tag tag-beauty">Jjimjilbang</span>
-              <span class="tag tag-culture">Free Afternoon</span>
-              <span class="tag tag-culture">Shopping</span>
+              <span class="tag tag-beauty">K-Pop Dance Class</span>
+              <span class="tag tag-culture">Hongdae Nightlife</span>
             </div>
-            <p style="font-size:0.83rem; color:#aaa; margin-top:14px; font-style:italic;">Optional add-on: 13-step Korean hair treatment spa — bookable through Luxe Beauty Trip at additional cost.</p>
+            <p style="font-size:0.83rem; color:#aaa; margin-top:14px; font-style:italic;">Optional upgrade: VIP club night at one of Gangnam's world-ranked venues — bookable through Luxe Beauty Trip at additional cost.</p>
           </div>
         </div>
 
@@ -489,6 +529,61 @@
               <span class="tag tag-culture">Airport Transfer</span>
             </div>
           </div>
+        </div>
+
+        <h2 class="itin-section-heading" style="margin-top: 52px;">Seoul After Dark</h2>
+        <p class="itin-overview-text" style="margin-bottom: 28px;">Seoul has one of the best nightlife scenes in Asia and a K-pop culture that is completely unlike anything at home. These experiences are woven into the itinerary or available as add-ons depending on your group's energy.</p>
+
+        <div class="bridal-fun-grid">
+
+          <div class="bridal-fun-card">
+            <img src="images/k-pop.jpeg" alt="K-pop dance class Seoul" class="bridal-fun-img">
+            <div class="bridal-fun-body">
+              <h4>K-Pop Dance Class</h4>
+              <p>Learn the full choreography to an iconic K-pop track with a professional instructor in Hongdae. Pick your song — a BLACKPINK comeback, a BTS classic, whatever the group votes for. Walk out knowing every move. One of the most fun things you can do in Seoul.</p>
+            </div>
+          </div>
+
+          <div class="bridal-fun-card">
+            <img src="images/photo-studio.webp" alt="K-pop idol photo studio Seoul" class="bridal-fun-img">
+            <div class="bridal-fun-body">
+              <h4>K-Pop Idol Photo Studio</h4>
+              <p>Professional studio lighting, full idol-style backdrops, and props designed for the aesthetic. The photos come out looking genuinely incredible and the experience is something between a shoot and a game. Currently one of the most popular things in Seoul among locals and visitors alike.</p>
+            </div>
+          </div>
+
+          <div class="bridal-fun-card">
+            <div class="bridal-fun-icon">🎤</div>
+            <div class="bridal-fun-body">
+              <h4>Private Norebang</h4>
+              <p>Korea's private karaoke rooms are a completely different experience from a karaoke bar. Your own room, your own sound system, food and drinks brought to the door, and no audience except the women you came with. Every trip to Seoul ends in norebang. Non-negotiable.</p>
+            </div>
+          </div>
+
+          <div class="bridal-fun-card">
+            <div class="bridal-fun-icon">🌃</div>
+            <div class="bridal-fun-body">
+              <h4>Hongdae Bar Scene</h4>
+              <p>Seoul's most vibrant neighbourhood for a night out. Independent cocktail bars, rooftop terraces, live busking on the streets until 2am, and an energy that builds rather than slows as the night goes on. The right mix of intimate and electric for a group celebrating together.</p>
+            </div>
+          </div>
+
+          <div class="bridal-fun-card">
+            <div class="bridal-fun-icon">🎧</div>
+            <div class="bridal-fun-body">
+              <h4>Gangnam Club Night</h4>
+              <p>Gangnam's club scene operates at a completely different level. Club Octagon has been ranked among the world's top clubs multiple times. International DJs, impeccable production, and a crowd that knows how to dress. The right send-off for a bride who wants to do it properly.</p>
+            </div>
+          </div>
+
+          <div class="bridal-fun-card">
+            <div class="bridal-fun-icon">🌸</div>
+            <div class="bridal-fun-body">
+              <h4>Han River Night Picnic</h4>
+              <p>For a night that is more relaxed than rowdy: convenience store haul, fried chicken delivery, and the Han River lit up at night with the city skyline behind it. A quintessentially Seoul experience that costs almost nothing and tends to be the night everyone remembers most.</p>
+            </div>
+          </div>
+
         </div>
 
       </section>
