@@ -481,21 +481,13 @@
   <script>
     document.querySelector('.contact-form').addEventListener('submit', function () {
       var data = new FormData(this);
-      fetch('https://connect.mailerlite.com/api/subscribers', {
+      fetch('/api/subscribe', {
         method: 'POST',
-        headers: {
-          'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiYmNlYTkzOWMxODQxYjMyYzM0YTI1ZmUyYmU0NzA2YWJiY2ExZDBmODBkZTIyNGM4MDYxMDhkMzcyNjQ3M2M1MjhmMGIwNjZiYTA2Y2U2MTIiLCJpYXQiOjE3ODY5MTkxMzguMzUwMzk0LCJuYmYiOjE3ODY5MTkxMzguMzUwMzk2LCJleHAiOjQ5NDI1OTI3MzguMzQzMTE4LCJzdWIiOiIyNDk4NjYxIiwic2NvcGVzIjpbXX0.cSReU3aeMxnt6i3BkvsuAfSj-Hzv2j0yzollSMSux8mGQ9YJj7VPK_sj-mtr13siGy7ZZ6xJV0cDseWTeroo0Ftp86Y9yj-BWbwp6LBNXYkn37UKzivJyuD95R0uyYABGfFH0XeL0IJwTE8zDS1ulrG90HRQ0OW6BB3UQ87mCk8XTVd_hjlZPQgZpv47cnx-hVybMbH_sbuMSjH-7lYOiqzPB803a7jIs5T4UBVL3OUvGy_tXotpLbN_jaPzN6Vv0_5QlZOnW_6-vpme0jVSuceHXCSaNm4EZwDZWEWIWRiHKQp5lJmI_caDVpJNyDJI8Oh6nB7OMzLwqYSk3P08aL25yaNI8Y6IF9GTXifEOlReVoUHGW-u1C_4qko8pKoRwfiy1twVZgsekvagZ0TD7MP7TZo4PNV6L5wby9szBw7XelklV3dqA31OwJ0LATY2ea89c5W6BjPo_SdLW4hD_qegeg-5kuadQHRJBWEP2sQKpBIX86c9EwGb3mQBxWUp-Vu8Z6Mmqn1UDq7NTNu6O9DdjTsnzO5h9zBmvWdraWGFz1rH00AYJBKXY4qPvxZ7iWQxbXO5mjgAHUpXUu1BWLSkrlKUiU7fvALweH1Xs8XzgozeTUZjE8KhWAO8wCV_rF8_EXMZAeq9CPTJC1hi_aJPQWgzjNgnWKTuW2vT9t0',
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           email: data.get('email'),
-          fields: {
-            name: data.get('first_name'),
-            last_name: data.get('last_name'),
-            phone: data.get('phone')
-          },
-          groups: ['192824971821581963']
+          name: data.get('first_name'),
+          source: 'Home Page — Contact Form'
         }),
         keepalive: true
       });
