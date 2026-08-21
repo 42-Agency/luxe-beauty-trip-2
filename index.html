@@ -49,6 +49,7 @@
         <a href="experiences.html">K- Experiences</a>
         <a href="attractions.html">South Korea Attractions</a>
         <a href="treatments.html">K- Beauty Treatments</a>
+        <a href="seoul-group-trip.html">Group Trip</a>
         <a href="about.html">About</a>
         <a href="blog.html">Blog</a>
         <a href="index.html#contact">Contact</a>
@@ -62,6 +63,7 @@
       <a href="experiences.html">K- Experiences</a>
       <a href="attractions.html">South Korea Attractions</a>
       <a href="treatments.html">K- Beauty Treatments</a>
+      <a href="seoul-group-trip.html">Group Trip</a>
       <a href="about.html">About</a>
       <a href="blog.html">Blog</a>
       <a href="index.html#contact">Contact</a>
@@ -126,6 +128,13 @@
   </section>
 
   <!-- ITINERARIES -->
+  <section style="background:#1C3A4A; padding:48px 24px; text-align:center;">
+    <p style="font-size:0.68rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:#C9A87C; margin-bottom:12px;">Now Booking — November 2026</p>
+    <h2 style="font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:clamp(1.5rem,3vw,2.2rem); color:#fff; margin-bottom:14px;">Non-Invasive K-Beauty Escape</h2>
+    <p style="color:rgba(255,255,255,0.65); font-size:0.95rem; max-width:520px; margin:0 auto 28px; line-height:1.7;">A curated small-group retreat to Seoul for women who want real results and a luxury experience to match. 6 nights, 2 to 8 guests, fully managed from start to finish.</p>
+    <a href="seoul-group-trip.html" style="display:inline-block; background:#D4837A; color:#fff; font-size:0.78rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; padding:14px 32px; border-radius:4px; text-decoration:none;">View the Trip</a>
+  </section>
+
   <section class="itineraries" id="experiences">
     <h2 class="section-heading itineraries-heading">Signature Beauty Journeys</h2>
 
@@ -481,13 +490,21 @@
   <script>
     document.querySelector('.contact-form').addEventListener('submit', function () {
       var data = new FormData(this);
-      fetch('/api/subscribe', {
+      fetch('https://connect.mailerlite.com/api/subscribers', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiMWJkZGRiMzBiMzc0YWI5ODBlNjlkYWJlNGQzYjgwYjRjMDZmMjJjNzNiOTk3NTVmYjgzNDUyYmNlMzZhMmQxY2VhMWE3MDNhNDZmZjg4OTMiLCJpYXQiOjE3ODY5MTQ2NzMuMzI2NzM1LCJuYmYiOjE3ODY5MTQ2NzMuMzI2NzM3LCJleHAiOjQ5NDI1ODgyNzMuMzIyODU3LCJzdWIiOiIyNDk4NjYxIiwic2NvcGVzIjpbXX0.Ctu2iyRjB3dOf_LyTiiXdYIGTZiA-KKC1uRlzhaGIEt0KORQt-Ln7PVpnHlS5IybpouVDGx-Os9R5miMmTz-LEC7BZJqGgAU2Q1QUltTDV5Prde5V64E4i6VOTrMC6kHBSzhp02xFhhtHUTw2XokM3tbRXKm9oI_WKq2pXOqi2uxdShpmgpdpndLpiIbQY3HmfhJVxW9_GYg-JYY6V0Na_fR14XhU5ADaRwZJWcGQjpic962lFkQpe35apsQxY9pKd-1Iefs4nyDsg6yGRcOO3yEABYJoSOge6ZXqPQsQlWtY4aKXjEhCnUBrpxWJGZMcJuahtDjfQa0cKWeMWjXdhjmbyoygi8u1xz8GaKVI9TluBFzsTcUEFCvBolhsJJqxNlncLvykOQqUipqYUezxWCnS3DOSJ3NwChoQ42ZYIyW6vSJpmfEZHIfmoH6-N5i7XbGbF5udL9gvtRTxKgdr5vOgN_Fyjcmf4WDVZEN-OYMRLxpdJprsa5eyjAGGwTdutqDWb0vOHcvYsUkwPs2mVtPMJIpj8erzQFrdt_u2_26YhnXp36k8BbELD8045K10Gcc7ZfJwh7fm29llDTghB90STplRvqkV6gQyze5DYugPKm0fLChM6m1HOaOsqCc8sLlCmLk_qBqVBnjClSxDCb9GnmQ9MjS6PE0OiG3uRo',
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
         body: JSON.stringify({
           email: data.get('email'),
-          name: data.get('first_name'),
-          source: 'Home Page — Contact Form'
+          fields: {
+            name: data.get('first_name'),
+            last_name: data.get('last_name'),
+            phone: data.get('phone')
+          },
+          groups: ['192824971821581963']
         }),
         keepalive: true
       });
@@ -516,4 +533,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
