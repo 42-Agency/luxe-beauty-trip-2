@@ -1,5 +1,13 @@
 {
   "buildCommand": null,
   "outputDirectory": ".",
-  "installCommand": null
+  "installCommand": null,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.luxebeautytrip.com" }],
+      "destination": "https://luxebeautytrip.com/:path*",
+      "permanent": true
+    }
+  ]
 }
