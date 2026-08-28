@@ -4,9 +4,9 @@
   "installCommand": null,
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [{ "type": "host", "value": "www.luxebeautytrip.com" }],
-      "destination": "https://luxebeautytrip.com/:path*",
+      "destination": "https://luxebeautytrip.com/$1",
       "permanent": true
     }
   ]
