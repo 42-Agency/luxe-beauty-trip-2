@@ -660,6 +660,18 @@
   color: #555;
   margin-bottom: 20px;
 }
+.blog-body ul {
+  margin: 28px 0 36px;
+  padding-left: 24px;
+}
+.blog-body li {
+  font-size: 0.98rem;
+  line-height: 1.85;
+  color: #555;
+  margin-bottom: 16px;
+  padding-left: 6px;
+}
+.blog-body li:last-child { margin-bottom: 0; }
 .blog-body strong { color: var(--navy); font-weight: 500; }
 .blog-stat-row {
   display: flex;
