@@ -1,7 +1,7 @@
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).end();
 
-  const { email, name, marketing_consent, source } = req.body || {};
+  const { email, name, last_name, phone, marketing_consent, source } = req.body || {};
   if (!email) return res.status(400).json({ error: 'email required' });
 
   const ML_TOKEN = process.env.MAILERLITE_API_KEY;
@@ -20,6 +20,8 @@ export default async function handler(req, res) {
     email,
     fields: {
       name: name || '',
+      last_name: last_name || '',
+      phone: phone || '',
       marketing_consent: marketing_consent || '',
       lead_source: source || '',
     },

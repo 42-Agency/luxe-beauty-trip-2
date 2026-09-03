@@ -136,6 +136,8 @@ document.querySelectorAll('form[action*="formspree.io"]').forEach(form => {
           body: JSON.stringify({
             email: formData.get('email'),
             name: [formData.get('first_name') || formData.get('name') || '', formData.get('last_name') || ''].filter(Boolean).join(' '),
+            last_name: formData.get('last_name') || '',
+            phone: formData.get('phone') || '',
             marketing_consent: formData.get('marketing_consent') || '',
             source: formData.get('source') || '',
           }),
@@ -166,3 +168,47 @@ if (header) {
       : '0 1px 16px rgba(0,0,0,0.07)';
   }, { passive: true });
 }
+
+// Blog newsletter signup — posts straight to MailerLite via /api/subscribe, inline confirmation
+document.querySelectorAll('.newsletter-form').forEach(form => {
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    const emailInput = form.querySelector('input[type="email"]');
+    const email = (emailInput.value || '').trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { emailInput.focus(); return; }
+
+    const original = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email,
+          name: '',
+          marketing_consent: form.querySelector('input[name="marketing_consent"]')?.value || 'Yes',
+          source: form.querySelector('input[name="source"]')?.value || 'Blog Newsletter',
+        }),
+      });
+      if (!res.ok) throw new Error('subscribe failed');
+
+      const wrap = form.closest('.blog-newsletter');
+      if (wrap) {
+        wrap.innerHTML = '<h3>You are on the list</h3><p class="newsletter-msg">Thanks for reading. Look out for the next letter in your inbox.</p>';
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = original;
+      let err = form.parentNode.querySelector('.newsletter-error');
+      if (!err) {
+        err = document.createElement('p');
+        err.className = 'newsletter-consent newsletter-error';
+        form.insertAdjacentElement('afterend', err);
+      }
+      err.textContent = 'Something went wrong. Please try again, or email info@luxebeautytrip.com.';
+    }
+  });
+});
