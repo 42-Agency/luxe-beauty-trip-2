@@ -129,19 +129,27 @@ document.querySelectorAll('form[action*="formspree.io"]').forEach(form => {
       });
 
       if (res.ok) {
-        // Add to MailerLite in the background (non-blocking)
-        fetch('/api/subscribe', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email: formData.get('email'),
-            name: [formData.get('first_name') || formData.get('name') || '', formData.get('last_name') || ''].filter(Boolean).join(' '),
-            last_name: formData.get('last_name') || '',
-            phone: formData.get('phone') || '',
-            marketing_consent: formData.get('marketing_consent') || '',
-            source: formData.get('source') || '',
-          }),
-        }).catch(() => {});
+        // Sync to MailerLite via /api/subscribe. Await it and set keepalive so the
+        // request is not cancelled by the redirect below. The redirect still runs
+        // regardless of the result — Formspree has already captured the lead.
+        try {
+          const mlRes = await fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            keepalive: true,
+            body: JSON.stringify({
+              email: formData.get('email'),
+              name: [formData.get('first_name') || formData.get('name') || '', formData.get('last_name') || ''].filter(Boolean).join(' '),
+              last_name: formData.get('last_name') || '',
+              phone: formData.get('phone') || '',
+              marketing_consent: formData.get('marketing_consent') || '',
+              source: formData.get('source') || '',
+            }),
+          });
+          if (!mlRes.ok) console.error('MailerLite sync failed:', mlRes.status, await mlRes.text().catch(() => ''));
+        } catch (err) {
+          console.error('MailerLite sync error:', err);
+        }
 
         const firstName = formData.get('first_name') || formData.get('name') || '';
         const lastName = formData.get('last_name') || '';
