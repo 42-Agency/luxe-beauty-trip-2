@@ -1,0 +1,213 @@
+{
+  "_comment": "Image library for Luxe Beauty Trip newsletters. The lbt-newsletter agent reads this to insert real hosted images instead of upload placeholders. Add an entry whenever you add an image the newsletters should be able to use. Keep it in sync with what is actually live at base_url.",
+
+  "base_url": "https://luxebeautytrip.com/images/",
+
+  "slot_specs": {
+    "logo":   { "width": 120, "note": "Header logo. Set width only, let height scale. Never force height." },
+    "hero":   { "width": 540, "height": 300, "ratio": 1.8, "note": "Top-of-email hero, roughly 1.8:1." },
+    "inline": { "width": 504, "height": 260, "ratio": 1.94, "note": "Section-break image, roughly 1.9:1." },
+    "strip":  { "width": 200, "height": 150, "ratio": 1.33, "note": "Optional 3-across image strip near the footer." }
+  },
+
+  "rules": [
+    "Every src must be an absolute HTTPS URL. Never a local path.",
+    "If an asset ratio is within about 10 percent of the slot ratio, set the slot width and height as given.",
+    "If it is further off, set width only and recompute height from the asset natural ratio. Do not force both dimensions, it squishes the photo.",
+    "Match by tags first, then by desc. If nothing scores a clear match for a slot, leave the upload placeholder for that slot rather than forcing a weak image.",
+    "Prefer assets whose bytes are under about 1 MB for email. Flag anything larger in the placeholder notes so Sophia can swap a lighter copy.",
+    "Always use the asset alt text, or tighten it to the section context."
+  ],
+
+  "assets": [
+    {
+      "file": "logo.png",
+      "url": "https://luxebeautytrip.com/images/logo.png",
+      "w": 1589, "h": 259, "bytes": 36000,
+      "desc": "Luxe Beauty Trip wordmark logo, navy on transparent.",
+      "alt": "Luxe Beauty Trip",
+      "slots": ["logo"],
+      "tags": ["logo", "brand", "wordmark"]
+    },
+    {
+      "file": "laser-toning.png",
+      "url": "https://luxebeautytrip.com/images/laser-toning.png",
+      "w": 1120, "h": 630, "bytes": 614000,
+      "desc": "Laser toning treatment in a clinic, practitioner treating a face.",
+      "alt": "A laser toning session at a Seoul skin clinic",
+      "slots": ["hero", "inline"],
+      "tags": ["laser", "toning", "pigmentation", "melasma", "device", "clinic", "treatment"]
+    },
+    {
+      "file": "pigmentation.jpg",
+      "url": "https://luxebeautytrip.com/images/pigmentation.jpg",
+      "w": 1243, "h": 889, "bytes": 64000,
+      "desc": "Close view of skin with pigmentation, before-treatment context.",
+      "alt": "Close view of skin showing uneven pigmentation",
+      "slots": ["inline"],
+      "tags": ["pigmentation", "melasma", "sun-spots", "skin", "tone", "before"]
+    },
+    {
+      "file": "microneedling.jpeg",
+      "url": "https://luxebeautytrip.com/images/microneedling.jpeg",
+      "w": 1500, "h": 1500, "bytes": 228000,
+      "desc": "Microneedling or skin-booster treatment close up.",
+      "alt": "A microneedling treatment being performed",
+      "slots": ["inline"],
+      "tags": ["microneedling", "skinbooster", "rejuran", "collagen", "device", "treatment"]
+    },
+    {
+      "file": "led-therapy.jpg",
+      "url": "https://luxebeautytrip.com/images/led-therapy.jpg",
+      "w": 800, "h": 450, "bytes": 52000,
+      "desc": "LED light therapy mask, calm end-of-session mood.",
+      "alt": "LED light therapy as a calming finish to a treatment",
+      "slots": ["hero", "inline"],
+      "tags": ["led", "calming", "recovery", "soothing", "finish", "low-downtime"]
+    },
+    {
+      "file": "firmness.png",
+      "url": "https://luxebeautytrip.com/images/firmness.png",
+      "w": 1620, "h": 1080, "bytes": 950000,
+      "desc": "Skin firming and lifting energy device treatment on the lower face.",
+      "alt": "An energy-based lifting treatment along the jawline",
+      "slots": ["hero", "inline"],
+      "tags": ["lifting", "firming", "ultherapy", "thermage", "tightening", "contour", "device"]
+    },
+    {
+      "file": "antiaging.jpg",
+      "url": "https://luxebeautytrip.com/images/antiaging.jpg",
+      "w": 769, "h": 516, "bytes": 88000,
+      "desc": "Anti-aging consultation, practitioner assessing a client's face.",
+      "alt": "A practitioner assessing a client's skin during a consultation",
+      "slots": ["inline"],
+      "tags": ["antiaging", "consultation", "assessment", "planning", "practitioner"]
+    },
+    {
+      "file": "clinic.png",
+      "url": "https://luxebeautytrip.com/images/clinic.png",
+      "w": 1536, "h": 1024, "bytes": 1865000,
+      "desc": "Calm modern Seoul aesthetic clinic interior.",
+      "alt": "A calm modern Seoul aesthetic clinic interior",
+      "slots": ["hero"],
+      "tags": ["clinic", "room", "interior", "consultation", "setting", "calm"]
+    },
+    {
+      "file": "colour-analysis.jpg",
+      "url": "https://luxebeautytrip.com/images/colour-analysis.jpg",
+      "w": 580, "h": 350, "bytes": 104000,
+      "desc": "Personal colour analysis session with drape swatches.",
+      "alt": "A personal colour analysis session in Seoul",
+      "slots": ["inline"],
+      "tags": ["colour-analysis", "experience", "styling", "itinerary", "non-treatment"]
+    },
+    {
+      "file": "jjimjilbang.jpg",
+      "url": "https://luxebeautytrip.com/images/jjimjilbang.jpg",
+      "w": 1024, "h": 682, "bytes": 68000,
+      "desc": "Korean jjimjilbang bathhouse, restful spa setting.",
+      "alt": "A traditional Korean bathhouse, a restful spa setting",
+      "slots": ["hero", "inline"],
+      "tags": ["jjimjilbang", "spa", "bathhouse", "recovery", "rest", "downtime", "experience"]
+    },
+    {
+      "file": "founders.jpg",
+      "url": "https://luxebeautytrip.com/images/founders.jpg",
+      "w": 4032, "h": 3024, "bytes": 4100000,
+      "desc": "Founders Sophia and Diana. Large file, request a resized copy before use.",
+      "alt": "Luxe Beauty Trip founders Sophia and Diana",
+      "slots": ["inline"],
+      "tags": ["founders", "sophia", "diana", "about", "team", "personal"]
+    },
+    {
+      "file": "gyeongbokgung.jpg",
+      "url": "https://luxebeautytrip.com/images/gyeongbokgung.jpg",
+      "w": 2500, "h": 1669, "bytes": 704000,
+      "desc": "Gyeongbokgung Palace, Seoul.",
+      "alt": "Gyeongbokgung Palace in Seoul",
+      "slots": ["hero", "strip"],
+      "tags": ["seoul", "palace", "culture", "sightseeing", "itinerary", "travel", "fall", "autumn"]
+    },
+    {
+      "file": "seoul-fall.jpeg",
+      "url": "https://luxebeautytrip.com/images/seoul-fall.jpeg",
+      "w": 1600, "h": 1069, "bytes": 696000,
+      "desc": "Seoul in autumn, warm foliage colour across the city.",
+      "alt": "Seoul streets in autumn with warm foliage colour",
+      "slots": ["hero", "inline"],
+      "tags": ["seoul", "fall", "autumn", "foliage", "leaves", "season", "november", "travel", "outdoors"]
+    },
+    {
+      "file": "seoul-garden.jpg",
+      "url": "https://luxebeautytrip.com/images/seoul-garden.jpg",
+      "w": 928, "h": 1160, "bytes": 176000,
+      "desc": "A quiet Seoul garden, portrait orientation. Best used width-only in a narrow column.",
+      "alt": "A quiet garden path in Seoul",
+      "slots": ["inline"],
+      "tags": ["seoul", "garden", "calm", "outdoors", "walk", "recovery", "rest", "fall", "autumn"]
+    },
+    {
+      "file": "bukchon.jpg",
+      "url": "https://luxebeautytrip.com/images/bukchon.jpg",
+      "w": 1080, "h": 1440, "bytes": 340000,
+      "desc": "Bukchon Hanok Village lanes, portrait orientation.",
+      "alt": "The traditional hanok lanes of Bukchon in Seoul",
+      "slots": ["inline"],
+      "tags": ["seoul", "bukchon", "hanok", "culture", "neighbourhood", "walk", "fall", "autumn", "sightseeing"]
+    },
+    {
+      "file": "shopping-seoul.jpeg",
+      "url": "https://luxebeautytrip.com/images/shopping-seoul.jpeg",
+      "w": 640, "h": 400, "bytes": 144000,
+      "desc": "A bright Seoul shopping street at night.",
+      "alt": "A bright Seoul shopping street lit up at night",
+      "slots": ["inline", "strip"],
+      "tags": ["seoul", "shopping", "myeongdong", "lights", "evening", "winter", "itinerary"]
+    },
+    {
+      "file": "newsletter/starfield-christmas.jpeg",
+      "url": "https://luxebeautytrip.com/images/newsletter/starfield-christmas.jpeg",
+      "w": 800, "h": 571, "bytes": 180937,
+      "desc": "The Starfield Library Christmas tree and holiday lights, COEX Seoul.",
+      "alt": "The Starfield Library Christmas tree and lights in Seoul",
+      "slots": ["hero", "inline"],
+      "tags": ["seoul", "christmas", "holiday", "lights", "decorations", "starfield", "coex", "winter", "november", "festive", "evening"]
+    },
+    {
+      "file": "garosu-gil.jpg",
+      "url": "https://luxebeautytrip.com/images/garosu-gil.jpg",
+      "w": 4032, "h": 3024, "bytes": 2500000,
+      "desc": "Garosu-gil tree-lined shopping street, Sinsa. Large file, request a resized copy.",
+      "alt": "The tree-lined Garosu-gil street in Seoul",
+      "slots": ["strip", "inline"],
+      "tags": ["seoul", "garosugil", "shopping", "neighbourhood", "itinerary", "travel"]
+    },
+    {
+      "file": "myeongdong.webp",
+      "url": "https://luxebeautytrip.com/images/myeongdong.webp",
+      "w": 2083, "h": 1173, "bytes": 304000,
+      "desc": "Myeongdong shopping district at dusk.",
+      "alt": "The Myeongdong shopping district in Seoul",
+      "slots": ["hero", "strip"],
+      "tags": ["seoul", "myeongdong", "shopping", "skincare-shopping", "itinerary", "travel"]
+    },
+    {
+      "file": "hanjeongsik.jpg",
+      "url": "https://luxebeautytrip.com/images/hanjeongsik.jpg",
+      "w": 610, "h": 394, "bytes": 332000,
+      "desc": "Korean hanjeongsik multi-dish meal.",
+      "alt": "A traditional Korean hanjeongsik meal",
+      "slots": ["inline", "strip"],
+      "tags": ["food", "dining", "hanjeongsik", "experience", "itinerary"]
+    },
+    {
+      "file": "cta-banner.jpg",
+      "url": "https://luxebeautytrip.com/images/cta-banner.jpg",
+      "w": 1200, "h": 667, "bytes": 44000,
+      "desc": "Generic brand banner, soft neutral tones, no text.",
+      "alt": "Luxe Beauty Trip",
+      "slots": ["hero"],
+      "tags": ["generic", "brand", "fallback", "neutral"]
+    }
+  ]
+}
