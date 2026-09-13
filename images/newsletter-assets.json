@@ -39,6 +39,15 @@
       "tags": ["pico", "toning", "pigmentation", "before-after", "laser", "device", "results"]
     },
     {
+      "file": "wellness.png",
+      "url": "https://luxebeautytrip.com/images/wellness.png",
+      "w": 1200, "h": 630, "bytes": 740000,
+      "desc": "Calm wellness moment, soft warm tones, fits a recovery or reset mood.",
+      "alt": "A calm wellness moment during recovery in Seoul",
+      "slots": ["hero", "inline"],
+      "tags": ["wellness", "calm", "recovery", "rest", "reset", "downtime", "spa"]
+    },
+    {
       "file": "logo.png",
       "url": "https://luxebeautytrip.com/images/logo.png",
       "w": 1589, "h": 259, "bytes": 36000,
