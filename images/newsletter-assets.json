@@ -30,6 +30,15 @@
       "tags": ["clinic", "room", "interior", "calm", "treatment", "setting"]
     },
     {
+      "file": "treatment-room.jpg",
+      "url": "https://luxebeautytrip.com/images/treatment-room.jpg",
+      "w": 801, "h": 473, "bytes": 52000,
+      "desc": "A calm treatment room, close to the hero slot ratio.",
+      "alt": "A calm Seoul aesthetic clinic treatment room",
+      "slots": ["hero"],
+      "tags": ["clinic", "room", "interior", "calm", "treatment", "setting"]
+    },
+    {
       "file": "pico-toning-before-after.jpeg",
       "url": "https://luxebeautytrip.com/images/pico-toning-before-after.jpeg",
       "w": 818, "h": 694, "bytes": 120000,
