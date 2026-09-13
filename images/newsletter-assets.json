@@ -21,6 +21,24 @@
 
   "assets": [
     {
+      "file": "calm-seoul-clinic-treatment-room.jpeg",
+      "url": "https://luxebeautytrip.com/images/calm-seoul-clinic-treatment-room.jpeg",
+      "w": 1920, "h": 1378, "bytes": 444000,
+      "desc": "A calm Seoul aesthetic clinic treatment room, warm rose tones.",
+      "alt": "A calm Seoul aesthetic clinic treatment room",
+      "slots": ["hero"],
+      "tags": ["clinic", "room", "interior", "calm", "treatment", "setting"]
+    },
+    {
+      "file": "pico-toning-before-after.jpeg",
+      "url": "https://luxebeautytrip.com/images/pico-toning-before-after.jpeg",
+      "w": 818, "h": 694, "bytes": 120000,
+      "desc": "Before and after comparison of a pico toning treatment for pigmentation.",
+      "alt": "Before and after a pico toning treatment for pigmentation",
+      "slots": ["inline"],
+      "tags": ["pico", "toning", "pigmentation", "before-after", "laser", "device", "results"]
+    },
+    {
       "file": "logo.png",
       "url": "https://luxebeautytrip.com/images/logo.png",
       "w": 1589, "h": 259, "bytes": 36000,
