@@ -8,6 +8,16 @@
       "has": [{ "type": "host", "value": "www.luxebeautytrip.com" }],
       "destination": "https://luxebeautytrip.com/$1",
       "permanent": true
-    }
+    },
+    { "source": "/blog.html", "destination": "/blog/", "permanent": true },
+    { "source": "/blog-hifu-vs-ultherapy.html", "destination": "/blog/hifu-vs-ultherapy.html", "permanent": true },
+    { "source": "/blog-how-to-plan-kbeauty-trip-seoul.html", "destination": "/blog/how-to-plan-kbeauty-trip-seoul.html", "permanent": true },
+    { "source": "/blog-how-to-research-kbeauty-clinics-seoul.html", "destination": "/blog/how-to-research-kbeauty-clinics-seoul.html", "permanent": true },
+    { "source": "/blog-korea-glass-skin-treatments.html", "destination": "/blog/korea-glass-skin-treatments.html", "permanent": true },
+    { "source": "/blog-stacking-treatments-korea.html", "destination": "/blog/stacking-treatments-korea.html", "permanent": true },
+    { "source": "/blog-treatments-not-in-us.html", "destination": "/blog/treatments-not-in-us.html", "permanent": true },
+    { "source": "/blog-types-of-clinics-seoul.html", "destination": "/blog/types-of-clinics-seoul.html", "permanent": true },
+    { "source": "/seoul-group-trip.html", "destination": "/group-trip/", "permanent": true },
+    { "source": "/seoul-november.html", "destination": "/group-trip/november.html", "permanent": true }
   ]
 }
