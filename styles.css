@@ -1027,6 +1027,15 @@ h1, h2, h3, h4 {
 }
 
 /* ===== FOOTER ===== */
+.footer-disclaimer {
+  max-width: 760px;
+  margin: 0 auto 10px;
+  font-size: 0.74rem;
+  line-height: 1.6;
+  letter-spacing: 0;
+  color: rgba(255,255,255,0.55);
+}
+
 .footer {
   background: var(--navy);
   color: rgba(255,255,255,0.65);
