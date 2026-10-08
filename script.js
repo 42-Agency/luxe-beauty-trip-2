@@ -203,7 +203,7 @@ document.querySelectorAll('.newsletter-form').forEach(form => {
       });
       if (!res.ok) throw new Error('subscribe failed');
 
-      const wrap = form.closest('.blog-newsletter');
+      const wrap = form.closest('.blog-newsletter, .blog-next-letter');
       if (wrap) {
         wrap.innerHTML = '<h3>You are on the list</h3><p class="newsletter-msg">Thanks for reading. Look out for the next letter in your inbox.</p>';
       }

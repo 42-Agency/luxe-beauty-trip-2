@@ -1349,3 +1349,99 @@ h1, h2, h3, h4 {
   .newsletter-form { flex-direction: column; }
   .newsletter-form button { width: 100%; }
 }
+
+/* ===== BLOG END OF POST: one block, two choices ===== */
+.blog-body .blog-keep-reading {
+  margin-top: 32px;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+.blog-keep-reading strong { color: var(--navy); }
+.blog-keep-reading a {
+  color: var(--rose);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.blog-next {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  margin-top: 40px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #EADFD6;
+}
+.blog-next-main {
+  background: var(--navy);
+  color: #fff;
+  padding: 40px 36px;
+}
+.blog-body .blog-next-main h3 {
+  text-transform: none;
+  letter-spacing: 0;
+  margin-top: 0;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.blog-body .blog-next-main p {
+  color: #fff;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  opacity: 0.8;
+  margin-bottom: 24px;
+}
+.blog-next-letter {
+  background: #FAF6F2;
+  padding: 40px 32px;
+}
+.blog-body .blog-next-letter > p.blog-next-eyebrow {
+  opacity: 1;
+  line-height: 1.4;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 8px;
+}
+.blog-body .blog-next-letter h3 {
+  text-transform: none;
+  letter-spacing: 0;
+  margin-top: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.blog-body .blog-next-letter > p {
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: var(--text);
+  opacity: 0.8;
+  margin-bottom: 16px;
+}
+.blog-next-letter .newsletter-form {
+  flex-direction: column;
+  max-width: none;
+}
+.blog-next-letter .newsletter-form button { background: transparent; color: var(--navy); border: 1px solid var(--navy); }
+.blog-body .blog-next-letter .newsletter-consent {
+  line-height: 1.5;
+  margin-bottom: 0;
+  font-size: 0.7rem;
+  color: #9a9a9a;
+  margin-top: 10px;
+}
+.blog-next-letter .newsletter-msg {
+  font-size: 0.9rem;
+  color: var(--navy);
+  font-weight: 500;
+}
+@media (max-width: 720px) {
+  .blog-next { grid-template-columns: 1fr; }
+  .blog-next-main, .blog-next-letter { padding: 32px 22px; }
+}
